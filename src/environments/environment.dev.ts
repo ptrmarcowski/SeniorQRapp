@@ -1,5 +1,5 @@
 
 export const environment = {
     production: true,
-    apiUrl:"https://seniorqrapi-dev.azurewebsites.net/api/"
+    apiUrl:"https://kodyqrnapomocseniorom.herokuapp.com/api/"
 };
