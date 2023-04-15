@@ -1,0 +1,83 @@
+ <div *ngIf="!showPopups" class="login-container">
+  <app-navbar></app-navbar>
+  <div class="login-logowanie">
+      <div class="login-column left">
+          <img src="/assets/login-image.png" alt="login" class="image-login">
+      </div>
+    <div class="login-column right">
+      <form [formGroup]="loginForm" class="login-form">
+        <div>
+          <div class="login-frame68">
+            <p class="login-text08">Witaj ponownie!</p>
+            <span class="login-text10">
+                Sprawdzaj aktualność i widoczność swoich danych przynajmniej raz na pół roku lub po każdej ważnej zmianie.
+            </span>
+          </div>
+          <div class="login-frame204">
+            <div class="login-inputsignin">
+              <div class="d-flex align-center">                
+                <input type="text" formControlName="email" placeholder="Wpisz email" class="login-input" />
+              </div>  
+              <div *ngIf="submitted && formValues.email.errors" class="invalid-feedback">
+                <div *ngIf="formValues.email.errors.required">Email jest wymagany</div>
+              </div>            
+            </div>
+            <div class="login-frame207 d-flex">
+              <div class="login-inputsignin password">
+                  <div class="d-flex align-center">
+                    <input 
+                      [type]="fieldTextType ? 'text' : 'password'" 
+                      formControlName="password"
+                      placeholder="Wpisz hasło" 
+                      class="login-input" 
+                    />
+                    <img
+                      *ngIf="!fieldTextType"
+                      src="/assets/eye.png"
+                      (click)="togglePassword()"
+                      alt="Pokaż hasło"
+                      class="login-eye"
+                    />
+                    <img
+                      *ngIf="fieldTextType"
+                      src="/assets/eye-crossed.png"
+                      (click)="togglePassword()"
+                      alt="Ukryj hasło"
+                      class="login-eye"
+                    />
+                  </div>
+                  <div *ngIf="submitted && formValues.password.errors" class="invalid-feedback">
+                    <div *ngIf="formValues.password.errors.required">Hasło jest wymagane</div>
+                  </div>
+                  <span class="login-text-reminder"><span>Nie pamiętam hasła.</span></span>
+              </div>    
+              <p *ngIf="invalidData" class="invalid-data">Niepoprawne dane logowania</p>        
+            </div>
+          </div>
+        </div>
+        <div class="login-frame41">
+          <button class="login-button" (click)="login()">
+            <span class="login-text"><span>Zaloguj się</span></span>          
+            <img
+              src="/assets/playground_assets/component2i683-lajl.svg"
+              alt="Component2I683"
+              class="login-component2 non-contrast-img"
+            />
+            <img
+              src="/assets/arrow-right-contrast.png"
+              alt="Component2I683"
+              class="login-component2 contrast-img"
+            />
+          </button>
+          <div class="login-text02">
+              <p class="login-text03">Nie masz jeszcze konta? <span routerLink="/register">Zarejestruj się.</span></p>
+              
+        </div>
+      </div>
+    </form>
+  </div>
+ </div>
+</div>
+<ng-container *ngIf="showPopups">
+  <popup-one [firstTime]="firstTime"></popup-one>
+</ng-container>

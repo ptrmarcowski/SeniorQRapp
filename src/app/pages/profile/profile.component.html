@@ -1,0 +1,618 @@
+<ng-container *ngIf="!isUserInfoFromHash">
+  <app-navbar></app-navbar>
+<div class="profile-container">
+      <div class="profile d-flex">
+        <div class="profile-data">
+          <div class="profile-frame99">
+            <div class="profile-frame212">
+                <br /><br /><br />
+              <div class="profile-frame38">
+                  <img
+                    src="assets/playground_assets/default-profile-big.png"
+                    alt="Vector4252"
+                  />
+              </div>
+              <span class="profile-text073"><span>Witaj {{userData.firstName}}!</span></span>
+            </div>
+            <span class="profile-text075">
+              <span>
+                W tym miejscu możesz zobaczyć, uzupełnić i edytować swoje dane oraz
+                pobrać kod QR.
+              </span>
+            </span>
+          </div>
+          <div class="profile-group46">
+            <div class="profile-frame68">
+              <div class="profile-frame69">
+                <span class="profile-text071">
+                  <span>Twoje dane (widoczne po zeskanowaniu kodu QR)</span>
+                </span>
+              </div>
+              <div class="profile-frame60">
+                <div *ngIf="showBasicData" class="profile-frame130">
+                  <img
+                    src="/assets/playground_assets/lineduotoneusersuserid4230-sz.svg"
+                    alt="LineDuotoneUsersUserId4230"
+                    class="profile-line-duotone-users-user-id"
+                  />
+                  <span class="profile-text002"><span>Dane podstawowe</span></span>
+                </div>
+                <div *ngIf="showBasicData" class="profile-frame182">
+                  <div *ngIf="userData.firstName && userData.firstNameVisibility" class="profile-frame178">
+                    <span class="profile-text004"><span>Imię:</span></span>
+                    <span class="profile-text006"><span>{{userData.firstName}}</span></span>
+                  </div>
+                  <div *ngIf="userData.lastName && userData.firstNameVisibility" class="profile-frame179">
+                    <span class="profile-text008"><span>Nazwisko:</span></span>
+                    <span class="profile-text010"><span>{{userData.lastName}}</span></span>
+                  </div>
+                  <div *ngIf="userData.yearOfBirth && userData.firstNameVisibility" class="profile-frame180">
+                    <span class="profile-text012"><span>Rok urodzenia:</span></span>
+                    <span class="profile-text014"><span>{{userData.yearOfBirth}}</span></span>
+                  </div>
+                  <div *ngIf="userData.phone && userData.phoneVisibility" class="profile-frame180">
+                    <span class="profile-text020">
+                      <span>Numer telefonu do osoby kontaktowej (1):</span>
+                    </span>
+                    <span class="profile-text022"><span>{{userData.phonePrefix}} {{userData.phone}}</span></span>
+                  </div>
+                  <div *ngIf="userData.phone2 && userData.phoneVisibility" class="profile-frame183">
+                    <span class="profile-text020">
+                      <span>Numer telefonu do osoby kontaktowej (2):</span>
+                    </span>
+                    <span class="profile-text022"><span>{{userData.phone2Prefix}} {{userData.phone2}}</span></span>
+                  </div>
+                </div>
+                <div *ngIf="(userData.street && userData.streetVisibility)
+                || (userData.city && userData.streetVisibility)
+                || (userData.state && userData.streetVisibility)" class="profile-frame129">
+                  <img
+                    src="/assets/playground_assets/lineduotonebuildinginfrastructurehome4230-29yy.svg"
+                    alt="LineDuotoneBuildingInfrastructureHome4230"
+                    class="profile-line-duotone-building-infrastructure-home"
+                  />
+                  <span class="profile-text024"><span>Adres zamieszkania</span></span>
+                </div>
+                <div  *ngIf="(userData.street && userData.streetVisibility)
+                || (userData.city && userData.streetVisibility)
+                || (userData.state && userData.streetVisibility)" class="profile-frame195">
+                  <div class="profile-frame194">
+                    <span class="profile-text026">
+                      <span>
+                        <span *ngIf="userData.streetVisibility">{{userData.street}}</span>
+                        <br />
+                        <span *ngIf="userData.streetVisibility">{{userData.city}}</span>
+                        <br />
+                        <span *ngIf="userData.state && userData.streetVisibility">woj. {{userData.state}}</span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div *ngIf="convertBloodType && userData.bloodTypeVisibility" class="profile-frame128">
+                  <img
+                    src="/assets/playground_assets/lineduotonemedicinedropperminimalistic4231-av1a.svg"
+                    alt="LineDuotoneMedicineDropperMinimalistic4231"
+                    class="profile-line-duotone-medicine-dropper-minimalistic"
+                  />
+                  <span class="profile-text033"><span>Grupa krwi</span></span>
+                </div>
+                <div *ngIf="convertBloodType && userData.bloodTypeVisibility" class="profile-frame196">
+                  <div class="profile-frame1961">
+                    <span class="profile-text035"><span>{{convertBloodType}}</span></span>
+                  </div>
+                </div>
+                <div *ngIf="userData.drugAllergies || userData.foodAllergies || userData.otherAllergies" class="bordered-section">
+                  <div class="profile-frame127">
+                    <img
+                      src="/assets/playground_assets/lineduotonemedicinebacteria4231-1cex.svg"
+                      alt="LineDuotoneMedicineBacteria4231"
+                      class="profile-line-duotone-medicine-bacteria"
+                    />
+                    <span class="profile-text037"><span>Alergie</span></span>
+                  </div>
+                  <div class="profile-frame197">
+                    <div *ngIf="userData.drugAllergies && userData.drugAllergiesVisibility" class="profile-frame185">
+                      <span class="profile-text039"><span>Alergie na leki:</span></span>
+                      <span class="profile-text041"><span>{{userData.drugAllergies?.replace(';', ', ')}}</span></span>
+                    </div>
+                    <div *ngIf="userData.foodAllergies && userData.drugAllergiesVisibility" class="profile-frame186">
+                      <span class="profile-text043"><span>Alergie pokarmowe:</span></span>
+                      <span class="profile-text045"><span>{{userData.foodAllergies?.replace(';', ', ')}}</span></span>
+                    </div>
+                    <div *ngIf="userData.otherAllergies && userData.drugAllergiesVisibility" class="profile-frame187">
+                      <span class="profile-text047"><span>Inne alergie:</span></span>
+                      <span class="profile-text049"><span>{{userData.otherAllergies?.replace(';', ', ')}}</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bordered-section">
+                  <div class="profile-frame126">
+                    <img
+                      src="/assets/playground_assets/lineduotonemedicinestethoscope4231-7tgv.svg"
+                      alt="LineDuotoneMedicineStethoscope4231"
+                      class="profile-line-duotone-medicine-stethoscope"
+                    />
+                    <span class="profile-text051"><span>Choroby przewlekłe</span></span>
+                  </div>
+                  <div *ngIf="userData.chronicDiseasesCirculatorySystem && userData.chronicDiseasesCirculatorySystemVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Układ krążenia:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.chronicDiseasesCirculatorySystem?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.chronicDiseasesDigestiveSystem && userData.chronicDiseasesDigestiveSystemVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Układ pokarmowy:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.chronicDiseasesDigestiveSystem?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.chronicDiseasesRespiratorySystem && userData.chronicDiseasesRespiratorySystemVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Układ oddechowy:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.chronicDiseasesRespiratorySystem?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.metabolicDiseases && userData.metabolicDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby metaboliczne:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.metabolicDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.kidneyDiseases && userData.kidneyDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby nerek:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.kidneyDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.nervousSystem && userData.nervousSystemVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Układ nerwowy:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.nervousSystem?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.neuromuscularSystem && userData.neuromuscularSystemVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Układ nerwowo-mięśniowy:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.neuromuscularSystem?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.liverDiseases && userData.liverDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby wątroby:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.liverDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.boneStructureDiseases && userData.boneStructureDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Układ kostny:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.boneStructureDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.eyeDiseases && userData.eyeDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby oczu:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.eyeDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.earDiseases && userData.earDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby uszu:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.earDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.mentalDisorders && userData.mentalDisordersVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby psychiczne:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.mentalDisorders?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.bloodDiseases && userData.bloodDiseasesVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Choroby krwi lub zaburzenia krzepnięcia:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.bloodDiseases?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.pastSurgeriesProcedures && userData.pastSurgeriesProceduresVisibility" class="profile-frame198">
+                    <div class="profile-frame184">
+                      <span class="profile-text053">
+                        <span>Inne:</span>
+                      </span>
+                      <span class="profile-text055">
+                        <span>
+                          {{userData.pastSurgeriesProcedures?.replace(';', ', ')}}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="(userData.hiv && userData.hivVisibility) || (userData.wzw && userData.hivVisibility)" class="bordered-section">
+                  <div class="profile-frame124">
+                    <img
+                      src="/assets/playground_assets/lineduotonemedicinevirus4232-41oli.svg"
+                      alt="LineDuotoneMedicineVirus4232"
+                      class="profile-line-duotone-medicine-virus"
+                    />
+                    <span class="profile-text057">
+                      <span>Informacja o chorobach wirusowych</span>
+                    </span>
+                  </div>
+                  <div *ngIf="userData.hiv && userData.hivVisibility" class="profile-frame199">
+                    <div class="profile-frame188">
+                      <span class="profile-text059"><span>HIV</span></span>
+                    </div>
+                  </div>
+                  <div *ngIf="userData.wzw && userData.hivVisibility" class="profile-frame199">
+                    <div class="profile-frame188">
+                      <span class="profile-text059"><span>WZW</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="userData.meds && userData.medsVisibility" class="profile-frame123">
+                  <img
+                    src="/assets/playground_assets/lineduotonemedicinepills34232-e16.svg"
+                    alt="LineDuotoneMedicinePills34232"
+                    class="profile-line-duotone-medicine-pills3"
+                  />
+                  <span class="profile-text061">
+                    <span>Przyjmowane leki stałe wraz z dawkowaniem</span>
+                  </span>
+                </div>
+                <div *ngIf="userData.meds && userData.medsVisibility" class="profile-frame201">
+                  <div class="profile-frame1891">
+                    <span class="profile-text069">
+                      <span>
+                        {{userData.meds?.replace(';', ', ')}}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div *ngIf="userData.additionalInfo && userData.additionalInfoVisibility" class="profile-frame1231">
+                  <img
+                    src="/assets/playground_assets/outlinelistlistheart4232-utie.svg"
+                    alt="OutlineListListHeart4232"
+                    class="profile-outline-list-list-heart"
+                  />
+                  <span class="profile-text067">
+                    <span>Dodatkowe informacje i instrukcje</span>
+                  </span>
+                </div>
+                <div *ngIf="userData.additionalInfo && userData.additionalInfoVisibility" class="profile-frame201 last">
+                  <div class="profile-frame1891">
+                    <span class="profile-text069">
+                      <span>
+                        {{userData.additionalInfo}}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span *ngIf="userData.lastUpdated" class="profile-text087">
+            <span>*Data ostatniej aktualizacji danych: {{userData.lastUpdated | date: 'd.M.yy'}}</span>
+          </span>
+        </div>
+        <div class="profile-qr">
+          <button routerLink="/form" class="profile-button">
+            <div class="profile-component2">
+              <img
+                src="/assets/playground_assets/component2i683-2oqi.svg"
+                alt="Component2I683"
+                class="profile-component21"
+              />
+            </div>
+            <span class="profile-text077"><span>Edytuj dane</span></span>
+          </button>
+          <div *ngIf="!isUserInfoFromHash" class="profile-group32">
+            <div *ngIf="qrCodeData" class="profile-frame49" id="qrCodeBox">
+                <qrcode [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+            </div>
+            <div class="profile-frame67">
+              <span class="profile-text"><span>Twój kod QR</span></span>
+            </div>
+          </div>
+          <button (click)="htmltoPDF()" class="profile-button1">
+            <span class="profile-text079"><span>Pobierz kod QR w PDF</span></span>
+          </button>
+          <button routerLink="/delivery-form" class="profile-button2">
+            <span class="profile-text081"><span>Zamów metki ponownie</span></span>
+          </button>
+          <button (click)="logout()" class="profile-button2">
+            <span class="profile-text081"><span>Wyloguj się</span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    </ng-container>
+
+    <ng-container *ngIf="isUserInfoFromHash">
+      <div class="code-qr-scan-container">
+        <div class="code-qr-scan-frame225">
+          <div class="code-qr-scan-frame224">
+            <div class="code-qr-scan-group43">
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/bc38ea7f-8f8f-461f-b791-8ef844b1c46e?org_if_sml=1163"
+                alt="Rectangle796837"
+                class="code-qr-scan-rectangle79"
+              />
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/c65b5587-8594-4aba-819a-6dc083d9f2b2?org_if_sml=1162"
+                alt="Rectangle836837"
+                class="code-qr-scan-rectangle83"
+              />
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/bc1890ae-4d8f-449c-b931-03bea7de6a41?org_if_sml=1160"
+                alt="Rectangle816837"
+                class="code-qr-scan-rectangle81"
+              />
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/199bfb4c-201c-4d1a-9589-816cdf0bd710?org_if_sml=1161"
+                alt="Rectangle846837"
+                class="code-qr-scan-rectangle84"
+              />
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/5eaf3c1a-b20b-4fe3-9537-7140dbac5d67?org_if_sml=1123"
+                alt="Rectangle806837"
+                class="code-qr-scan-rectangle80"
+              />
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/77259b57-026d-45aa-aaca-231f91ea6fe6?org_if_sml=1123"
+                alt="Rectangle856837"
+                class="code-qr-scan-rectangle85"
+              />
+              <img
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/9bcbc851-e2dc-45c1-affc-181b80be8fe5?org_if_sml=1123"
+                alt="Rectangle826837"
+                class="code-qr-scan-rectangle82"
+              />
+            </div>
+            <span class="code-qr-scan-text83">
+              <span>
+                <span>KODY QR</span>
+                <br />
+                <span>NA POMOC SENIOROM</span>
+              </span>
+            </span>
+          </div>
+        </div>
+      <div class="scanned-user-data">
+        <div class="code-qr-scan-frame190">
+            <span class="code-qr-scan-text">
+              <span class="code-qr-scan-text01">
+                Poniższe dane właściciela kodu QR są udostępnione tylko w przypadku
+              </span>
+              <b>nagłego wypadku i potrzeby pomocy właścicielowi kodu QR.</b>
+            </span>
+            <div class="code-qr-scan-frame193">
+              <img
+                src="/assets/playground_assets/vector4230-amm.svg"
+                alt="Vector4230"
+                class="code-qr-scan-vector"
+              />
+              <span class="code-qr-scan-text03">
+                <span>
+                  Nie wolno korzystać z nich ani udostępniać ich w żadnym innym celu.
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="code-qr-scan-group50">
+            <a href="{{'tel:'+ userData.phonePrefix + userData.phone}}" *ngIf="userData.phone" class="code-qr-scan-button">
+              <img
+                src="/assets/playground_assets/component2i683-215q.svg"
+                alt="Component2I683"
+                class="code-qr-scan-component2"
+              />
+              <span class="code-qr-scan-text79">
+                <span>Zadzwoń do osoby kontaktowej (1)</span>
+              </span>
+            </a>
+            <a href="{{'tel:'+ userData.phone2Prefix + userData.phone2}}" *ngIf="userData.phone2" class="code-qr-scan-button">
+              <img
+                src="/assets/playground_assets/component2i683-41rc.svg"
+                alt="Component2I683"
+                class="code-qr-scan-component21"
+              />
+              <span class="code-qr-scan-text81">
+                <span>Zadzwoń do osoby kontaktowej (2)</span>
+              </span>
+            </a>
+          </div>
+          <div *ngIf="userData.additionalInfo && userData.additionalInfoVisibility" class="code-qr-scan-frame191">
+            <span class="code-qr-scan-text05">
+              <span>Ważne informacje o osobie:</span>
+            </span>
+            <span class="code-qr-scan-text07">
+              {{userData.additionalInfo}}
+            </span>
+          </div>
+          <div class="code-qr-scan-frame192">
+            <span class="code-qr-scan-text12 bordered"><span>Dane osobowe:</span></span>
+            <div class="code-qr-scan-frame182">
+              <div *ngIf="userData.firstName && userData.firstNameVisibility" class="code-qr-scan-frame178 bordered">
+                <span class="code-qr-scan-text14"><span>Imię:</span></span>
+                <span class="code-qr-scan-text16"><span>{{userData.firstName}}</span></span>
+              </div>
+              <div *ngIf="userData.lastName && userData.firstNameVisibility" class="code-qr-scan-frame179 bordered">
+                <span class="code-qr-scan-text18"><span>Nazwisko:</span></span>
+                <span class="code-qr-scan-text20"><span>{{userData.lastName}}</span></span>
+              </div>
+              <div *ngIf="userData.yearOfBirth && userData.firstNameVisibility" class="code-qr-scan-frame180 bordered">
+                <span class="code-qr-scan-text22"><span>Rok urodzenia:</span></span>
+                <span class="code-qr-scan-text24"><span>{{userData.yearOfBirth}}</span></span>
+              </div>
+              <div *ngIf="(userData.street && userData.streetVisibility)
+                    || (userData.city && userData.streetVisibility)
+                    || (userData.state && userData.streetVisibility)
+                    || (userData.postCode && userData.streetVisibility)
+                    || (userData.houseNo && userData.streetVisibility)" class="code-qr-scan-frame1821 bordered">
+                <span class="code-qr-scan-text30">
+                  <span>Adres zamieszkania:</span>
+                </span>
+                <span class="code-qr-scan-text32">
+                  <span *ngIf="userData.street && userData.streetVisibility">{{userData.street}} </span>
+                  <br/>
+                  <span *ngIf="userData.city && userData.streetVisibility">{{userData.city}}</span>
+                  <br/>
+                  <span *ngIf="userData.state && userData.streetVisibility">{{userData.state}}</span>
+                </span>
+              </div>
+              <div *ngIf="(userData.phone && userData.phoneVisibility) || (userData.phone2 && userData.phoneVisibility)" class="code-qr-scan-frame183 bordered">
+                <span class="code-qr-scan-text39">
+                  <span>Numer telefonu do osoby kontaktowej:</span>
+                </span>
+                <span class="code-qr-scan-text41">
+                    <p *ngIf="userData.phone && userData.phoneVisibility">{{userData.phonePrefix}} {{userData.phone}}</p>
+                    <p *ngIf="userData.phone2 && userData.phoneVisibility">{{userData.phone2Prefix}} {{userData.phone2}}</p>
+                </span>
+              </div>
+              <div *ngIf="convertBloodType && userData.bloodTypeVisibility" class="code-qr-scan-frame177 bordered">
+                <span class="code-qr-scan-text46"><span>Grupa krwi</span></span>
+                <span class="code-qr-scan-text48"><span>{{convertBloodType}}</span></span>
+              </div>
+              <div *ngIf="userData.drugAllergies && userData.drugAllergiesVisibility" class="code-qr-scan-frame185 bordered">
+                <span class="code-qr-scan-text50"><span>Alergie na leki:</span></span>
+                <span class="code-qr-scan-text52"><span>{{userData.drugAllergies?.replace(';', ', ')}}</span></span>
+              </div>
+              <div *ngIf="userData.foodAllergies && userData.drugAllergiesVisibility" class="code-qr-scan-frame186 bordered">
+                <span class="code-qr-scan-text54">
+                  <span>Alergie pokarmowe:</span>
+                </span>
+                <span class="code-qr-scan-text56"><span>{{userData.foodAllergies?.replace(';', ', ')}}</span></span>
+              </div>
+              <div *ngIf="userData.otherAllergies && userData.drugAllergiesVisibility" class="code-qr-scan-frame187 bordered">
+                <span class="code-qr-scan-text58"><span>Inne alergie:</span></span>
+                <span class="code-qr-scan-text60"><span>{{userData.otherAllergies?.replace(';', ', ')}}</span></span>
+              </div>
+              <div class="code-qr-scan-frame184 bordered">
+                <span class="code-qr-scan-text62">
+                  <span>Choroby przewlekłe:</span>
+                </span>
+                <span class="code-qr-scan-text64">
+                    <p *ngIf="userData.chronicDiseasesCirculatorySystem && userData.chronicDiseasesCirculatorySystemVisibility">{{userData.chronicDiseasesCirculatorySystem?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.chronicDiseasesDigestiveSystem && userData.chronicDiseasesDigestiveSystemVisibility">{{userData.chronicDiseasesDigestiveSystem?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.chronicDiseasesRespiratorySystem && userData.chronicDiseasesRespiratorySystemVisibility">{{userData.chronicDiseasesRespiratorySystem?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.metabolicDiseases && userData.metabolicDiseasesVisibility">{{userData.metabolicDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.kidneyDiseases && userData.kidneyDiseasesVisibility">{{userData.kidneyDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.nervousSystem && userData.nervousSystemVisibility">{{userData.nervousSystem?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.neuromuscularSystem && userData.neuromuscularSystemVisibility">{{userData.neuromuscularSystem?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.liverDiseases && userData.liverDiseasesVisibility">{{userData.liverDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.boneStructureDiseases && userData.boneStructureDiseasesVisibility">{{userData.boneStructureDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.eyeDiseases && userData.eyeDiseasesVisibility">{{userData.eyeDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.earDiseases && userData.earDiseasesVisibility">{{userData.earDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.mentalDisorders && userData.mentalDisordersVisibility">{{userData.mentalDisorders?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.bloodDiseases && userData.bloodDiseasesVisibility">{{userData.bloodDiseases?.replace(';', ', ')}}</p>
+                    <p *ngIf="userData.autoimmuneDiseases && userData.autoimmuneDiseasesVisibility">{{userData.autoimmuneDiseases?.replace(';', ', ')}}</p>
+                </span>
+              </div>
+              <div *ngIf="userData.pastSurgeriesProcedures && userData.pastSurgeriesProceduresVisibility" class="code-qr-scan-frame184 bordered">
+                <span class="code-qr-scan-text62">
+                  <span>Inne:</span>
+                </span>
+                <span class="code-qr-scan-text64">
+                    <p>{{userData.pastSurgeriesProcedures?.replace(';', ', ')}}</p>
+                </span>
+              </div> 
+              <div *ngIf="(userData.hiv && userData.hivVisibility) || (userData.wzw && userData.hivVisibility)" class="code-qr-scan-frame188 bordered">
+                <span class="code-qr-scan-text66">
+                  <span>Informacja o chorobach wirusowych:</span>
+                </span>
+                <p *ngIf="userData.hiv && userData.hivVisibility" class="code-qr-scan-text68">HIV</p>
+                <p *ngIf="userData.wzw && userData.hivVisibility" class="code-qr-scan-text68">wzw</p>
+              </div>
+              <div *ngIf="userData.meds && userData.medsVisibility" class="code-qr-scan-frame189 bordered">
+                <span class="code-qr-scan-text70">
+                  <span>Przyjmowane leki stałe:</span>
+                </span>
+                <span class="code-qr-scan-text72">
+                  <span>
+                    {{userData.meds?.replace(';', ', ')}}
+                  </span>
+                </span>
+              </div>
+              <span *ngIf="userData.lastUpdated" class="code-qr-scan-text74">
+                  *Data ostatniej aktualizacji danych: {{userData.lastUpdated | date: 'd.M.yy'}}
+              </span>
+            </div>
+          </div>
+      </div>
+      </div>
+    </ng-container>

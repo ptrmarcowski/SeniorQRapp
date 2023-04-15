@@ -1,0 +1,93 @@
+<div class="top-nav home-frame2221">
+    <div class="home-frame243">
+      <div routerLink="/" class="home-frame2241">
+        <img src="/assets/logo.png" class="non-contrast-img"/>
+        <img src="/assets/logo-contrast.png" class="contrast-img">
+      </div>
+      <div class="home-frame44">
+        <a (click)="goTo('/#jaktodziala')"><span class="nav-link home-text65">Jak to działa</span></a>
+        <div routerLink="/metki"><a route><span class="nav-link home-text67">Jak zamówić metki</span></a></div>
+        <a (click)="goTo('/#contact')"><span class="nav-link home-text69">Kontakt</span></a>
+        <div *ngIf="isLogged" routerLink="/profile" class="nav-link home-frame45">
+          <span class="home-text71"><span>Moje konto</span></span>
+          <div class="home-group39">
+            <img
+              src="assets/playground_assets/profile-default.png"
+              alt="Profil"
+              class="non-contrast-img"
+            />
+            <img
+            src="assets/profile-default-contrast.png"
+            alt="Profil"
+            class="contrast-img"
+          />
+          </div>
+        </div>
+        <div *ngIf="!isLogged" routerLink="/login" class="nav-link home-frame45">
+          <span class="home-text71"><span>Zaloguj się</span></span>
+          <div class="home-group39">
+            <img
+              src="assets/playground_assets/profile-default.png"
+              alt="Profil"
+              class="non-contrast-img"
+            />
+            <img
+              src="assets/profile-default-contrast.png"
+              alt="Profil"
+              class="contrast-img"
+            />
+          </div>
+        </div>
+        <div class="home-frame217">
+          <img
+            (click)="changeFontSize('regular')"
+            src="/assets/playground_assets/frame214i681-gxv.svg"
+            alt="Frame214I681"
+            class="home-frame2144 non-contrast-img"
+          />
+          <img
+            (click)="changeFontSize('big')"
+            src="/assets/playground_assets/frame214i681-gxv.svg"
+            alt="Frame214I681"
+            class="home-frame214 non-contrast-img"
+          />
+          <img
+            (click)="changeFontSize('huge')"
+            src="/assets/playground_assets/frame215i681-h0dc.svg"
+            alt="Frame215I681"
+            class="home-frame215 non-contrast-img"
+          />
+          <img
+            (click)="contrastChange()"
+            src="/assets/playground_assets/frame216i681-5meq.svg"
+            alt="Frame216I681"
+            class="home-frame216 non-contrast-img"
+          />
+          <img
+            (click)="changeFontSize('regular')"
+            src="/assets/regular-font-contrast.png"
+            alt="Frame214I681"
+            class="home-frame2144 contrast-img"
+          />
+          <img
+            (click)="changeFontSize('big')"
+            src="/assets/regular-font-contrast.png"
+            alt="Frame214I681"
+            class="home-frame214 contrast-img"
+          />
+          <img
+            (click)="changeFontSize('huge')"
+            src="/assets/big-font-contrast.png"
+            alt="Frame215I681"
+            class="home-frame215 contrast-img"
+          />
+          <img
+            (click)="contrastChange()"
+            src="/assets/eye-contrast.png"
+            alt="Frame216I681"
+            class="home-frame216 contrast-img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>

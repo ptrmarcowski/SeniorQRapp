@@ -1,0 +1,126 @@
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="frame277">
+            <div class="frame272">
+                <span class="text-progressbar"><span>Część 2 - Dane dodatkowe</span></span>
+                <span class="text-progressbar"><span>1 / 17</span></span>
+            </div>
+            <div class="progress-line">
+                <div class="progress-line-blue"></div>
+                <div class="progress-line-white"></div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+                                <form [formGroup]="userForm" class="form-formularzdanych">
+                                    <div class="form-section">
+                                        <div class="frame294">
+                                            <span class="form-category-title"><span>Grupa krwi</span></span>
+                                            <div class="frame263">
+                                                <span class="form-text-visibility"><span>Czy chcesz, by te dane były widoczne?</span></span>
+                                                <button [class.hidden]="!formValues.bloodTypeVisibility?.value" class="form-button011 recommended">
+                                                    <img [src]="!formValues.bloodTypeVisibility?.value ? '/assets/visibilityOff.png' :
+                        '/assets/visibilityOn.png'"
+                                                         alt="UnionI394"
+                                                         class="form-button-visibility" />
+                                                    <input style="cursor: pointer" type="checkbox" formControlName="bloodTypeVisibility" [checked]="formValues.bloodTypeVisibility?.value">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <span class="form-text090">
+                                        <span>
+                                            Zaznacz tylko, jeśli masz ważny dokument z potwierdzeniem grupy krwi i nosisz go przy sobie.
+                                        </span>
+                                    </span>
+                                    <br /><br /><br />
+                                    <div class="form-section">
+                                        <div class="section-content collapsed form-frame144" id="section3">
+                                            <div class="form-frame97">
+                                                <div class="form-frame95">
+                                                    <div class="blood-row d-flex">
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.APlus" formControlName="bloodType">
+                                                                <span><b>A</b> Rh+</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.BPlus" formControlName="bloodType">
+                                                                <span><b>B</b> Rh+</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.ABPlus" formControlName="bloodType">
+                                                                <span><b>AB</b> Rh+</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.ZeroPlus" formControlName="bloodType">
+                                                                <span><b>0</b> Rh+</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blood-row d-flex">
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.AMinus" formControlName="bloodType">
+                                                                <span><b>A</b> Rh-</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.BMinus" formControlName="bloodType">
+                                                                <span><b>B</b> Rh-</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.ABMinus" formControlName="bloodType">
+                                                                <span><b>AB</b> Rh-</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="button-check blood">
+                                                            <label>
+                                                                <input type="radio" [value]="bloodTypeEnum.ZeroMinus" formControlName="bloodType">
+                                                                <span><b>0</b> Rh-</span>
+                                                            </label>
+                                                        </div>
+                                                    </div><br /><br /><br /><br />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br /><br />
+                                    <div class="bottom-btns d-flex">
+                                        <button class="button-wstecz" (click)="saveForm('back')">
+                                            <img src="/assets/playground_assets/wstecz2.svg"
+                                                 alt="Wstecz" />
+                                        </button>
+                                        <button class="button-uzupelnijpozniej" (click)="saveForm('profile')">
+                                            <img src="/assets/playground_assets/uzupelnij-pozniej.svg"
+                                                 alt="Uzupelnijpozniej" />
+                                        </button>
+                                        <button class="button-dalej" (click)="saveForm('next')">
+                                            <img src="/assets/playground_assets/dalej2.svg"
+                                                 alt="Dalej" />
+                                        </button>
+                                    </div>
+                                </form>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="frame277">
+            <div class="frame272">
+                <span class="text-progressbar"><span>Część 1 - Dane najważniejsze</span></span>
+                <span class="text-progressbar"><span>2 / 5</span></span>
+            </div>
+            <div class="progress-line">
+                <div class="progress-line-blue"></div>
+                <div class="progress-line-white"></div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+        <form [formGroup]="userForm" class="form-formularzdanych">
+            <div formGroupName="basic" class="form-section">
+                <div class="frame294">
+                    <span class="form-category-title"><span>Telefon do osoby kontatkowej</span></span>
+                    <div class="frame263">
+                        <span class="form-text-visibility"><span>Czy chcesz, by te dane były widoczne?</span></span>
+                        <button [class.hidden]="!userForm.get(['basic', 'phoneVisibility'])?.value" class="form-button011 recommended">
+                            <img id="visibility" [src]="!userForm.get(['basic', 'phoneVisibility'])?.value ? '/assets/visibilityOff.png' :
+                        '/assets/visibilityOn.png'"
+                                 alt="UnionI394"
+                                 class="form-button-visibility" />
+                            <input style="cursor: pointer" type="checkbox" formControlName="phoneVisibility" [checked]="userForm.get(['basic', 'phoneVisibility'])?.value" />
+                        </button>
+                    </div>
+                </div>
+                <br /><br /><br />
+                            <div class="section-content collapsed form-frame132" id="section1">
+                                <div>
+                                    <div class="form-label03">
+                                        <span class="form-text016"><span>Nr tel do osoby kontaktowej [1]</span></span>
+                                    </div>
+                                    <div class="form-frame134">
+                                        <div class="inputs-tel">
+                                            <div class="form-input14">
+                                                <div class="form-label070">
+                                                    <span class="form-text038"><span>Kod kierunkowy</span></span>
+                                                </div>
+                                                <input type="text" formControlName="phonePrefix" class="form-input15" />
+                                            </div>
+                                            <div class="form-input16">
+                                                <div class="form-label070">
+                                                    <span class="form-text038"><span>Nr telefonu</span></span>
+                                                </div>
+                                                <input type="text" formControlName="phone" class="form-input17" />
+                                            </div>
+                                        </div>
+                                        <div class="input-info">
+                                            <div class="frame292">
+                                                <img src="/assets/info.png" class="info" />
+                                                <span><span class="text-info">Podaj numer telefonu Twojego krewnego lub opiekuna.</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-label03">
+                                        <span class="form-text016"><span>Nr tel do osoby kontaktowej [2]</span></span>
+                                    </div>
+                                    <div class="form-frame134">
+                                        <div class="inputs-tel">
+                                            <div class="form-input14">
+                                                <div class="form-label070">
+                                                    <span class="form-text038"><span>Kod kierunkowy</span></span>
+                                                </div>
+                                                <input type="text" formControlName="phone2Prefix" class="form-input15" />
+                                            </div>
+                                            <div class="form-input16">
+                                                <div class="form-label070">
+                                                    <span class="form-text038"><span>Nr telefonu</span></span>
+                                                </div>
+                                                <input type="text" formControlName="phone2" class="form-input17" />
+                                            </div>
+                                        </div>
+                                        <div class="input-info">
+                                            <div class="frame292">
+                                                <img src="/assets/info.png" class="info" />
+                                                <span><span class="text-info">Podaj drugi numer telefonu Twojego krewnego lub opiekuna na<br />
+                                                    wypadek, gdyby pierwsza osoba nie mogła odebrać. </span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+            </div>
+            <br /><br /><br /><br />
+            <div class="bottom-btns d-flex">
+                <button class="button-wstecz" (click)="saveForm('back')">
+                    <img src="/assets/playground_assets/wstecz2.svg"
+                         alt="Wstecz" />
+                </button>
+                <button class="button-uzupelnijpozniej" (click)="saveForm('profile')">
+                    <img src="/assets/playground_assets/uzupelnij-pozniej.svg"
+                         alt="Uzupelnijpozniej" />
+                </button>
+                <button class="button-dalej" (click)="saveForm('next')">
+                    <img src="/assets/playground_assets/dalej2.svg"
+                         alt="Dalej" />
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

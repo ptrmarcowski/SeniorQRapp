@@ -1,0 +1,32 @@
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<div class="kodqr-text">
+    <span class="kodqr-text1"><span>Oto Twój kod QR.</span></span>
+    <br />
+    <span class="kodqr-text2">Po jego zeskanowaniu smartfonem pokażą się dane, które uzupełniłeś w formularzu i oznaczyłeś jako widoczne.</span>
+</div>
+<div class="data-saved-container">
+  <div class="data-saved-podgldkodu-q-r">
+    <div class="data-saved-frame49">
+      <span class="data-saved-text"><span>Twój kod QR:</span></span>
+      <ng-container *ngIf="qrCodeData">
+        <qrcode [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+      </ng-container>
+    </div>
+    <div class="buttons-box">
+      <button routerLink="/delivery-form" class="data-saved-button">
+        <span class="data-saved-text06"><span>Zamów metki z kodem QR</span></span>
+      </button>
+      <button routerLink="/profile" class="data-saved-button1">
+        <span class="data-saved-text08"><span>Wróć do widoku konta</span></span>
+      </button>
+    </div>
+  </div>
+</div>

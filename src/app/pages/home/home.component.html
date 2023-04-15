@@ -1,0 +1,181 @@
+<div class="homepage">
+  <app-navbar (scrollToSection)="scrollTo($event)"></app-navbar>
+  <div class="content">
+      <div class="home-home">
+          <div class="home-column left">
+              <div class="home-frame213">
+                  <span class="home-text23"><span>Kody QR</span></span>
+                  <span class="home-text25"><span>na pomoc seniorom</span></span>
+              </div>
+              <span class="home-text06">
+                  Dedykujemy nasz projekt osobom starszym, niesamodzielnym i ich opiekunom. Dostrzegliśmy potrzebę wsparcia seniorów i zapewnienia <br />
+                  im bezpieczeństwa w samodzielnym poruszaniu się poza domem. <br />
+                  Nasze rozwiązanie może także stanowić istotną pomoc w sytuacjach <br />
+                  wymagających udzielenia pomocy medycznej.
+                  <br /><br />
+                  Dostarczamy naklejki oraz metki z kodem QR.<br />
+                  Jest to kod, który można łatwo zeskanować za pomocą telefonu <br />
+                  komórkowego. Odczytanie kodu daje dostęp do numeru <br />
+                  telefonicznego do opiekuna oraz innych danych ważnych dla zdrowia <br />
+                  osoby starszej. O zakresie informacji oraz sposobie noszenia naklejek <br />
+                  lub wszywek decyduje senior lub jego opiekun.
+              </span>
+              <div *ngIf="!isLogged" class="home-frame41">
+                  <div class="home-frame218">
+                      <button routerLink="/register" class="home-button">
+                          <span class="home-text27"><span>Zarejestruj się</span></span>
+                          <img src="/assets/playground_assets/strzalka.svg"
+                               alt="Component2I683"
+                               class="home-component2 non-contrast-img" />
+                          <img src="/assets/arrow-right-contrast.png"
+                               class="home-component2 contrast-img" />
+                      </button>
+                      <span class="home-text29">
+                          <span class="home-text30">Masz już konto?</span>
+                          <span class="login" routerLink="/login">Zaloguj się.</span>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <div class="home-column home-maskgroup">
+              <div class="home-group14">
+                  <img src="/assets/homeLogin2.png"
+                       alt="SeniorQR" />
+              </div>
+              <div class="line-image">
+
+              </div>
+          </div>
+      </div>
+      <div class="bar" id="jaktodziala">
+          <span class="text-jaktodziala">Jak to działa?</span>
+      </div>
+      <br />
+      <div class="kroki-text">
+          <div class="kroki-text-under">
+              <span class="kroki-punkt">01</span><br />
+              <span class="kroki-wiadomosc">
+                  Nagła potrzeba
+                  <br />pomocy
+              </span>
+          </div>
+          <div class="kroki-text-under">
+              <span class="kroki-punkt">02</span><br />
+              <span class="kroki-wiadomosc">
+                  Osoba skanuje
+                  <br />kod
+              </span>
+              <br />
+          </div>
+          <div class="kroki-text-under">
+              <span class="kroki-punkt">03</span><br />
+              <span class="kroki-wiadomosc">
+                  Widzi ważne
+                  <br />dane i decyduje,
+                  <br />jak pomóc
+              </span>
+          </div>
+          <div class="kroki-text-under">
+              <span class="kroki-punkt">04</span><br />
+              <span class="kroki-wiadomosc">
+                  Powiadamia
+                  <br />bliskich i udziela
+                  <br />pierwszej pomocy
+              </span>
+          </div>
+      </div>
+      <br />
+      <div class="kroki-image">
+          <div class="kroki-image-under">
+              <img src="/assets/krok1.png"
+                   alt="krok1" />
+          </div>
+          <div class="kroki-image-under">
+              <img src="/assets/krok2.png"
+                   alt="krok2" />
+          </div>
+          <div class="kroki-image-under">
+              <img src="/assets/krok3.png"
+                   alt="krok3" />
+          </div>
+          <div class="kroki-image-under">
+              <img src="/assets/krok4.png"
+                   alt="krok4" />
+          </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="under-footer" id="metki">
+          <div class="under-footer-text">
+              Nie obawiaj się wychodzić.
+              <br />
+              Jesteśmy, by Ci pomóc w razie potrzeby.
+              <br />
+              <button routerLink="/metki" class="metki-button">
+                  <span class="metki-text"><span>Sprawdź jak zamówić metki</span></span>
+              </button>
+          </div>
+          <div class="metki-image">
+              <img src="/assets/metkiHome.png"
+                   alt="metki" />
+          </div>
+      </div>
+  </div>
+ 
+  <!-- FOOTER -->
+  <div class="footer">
+<div class="footer-content">
+  <p class="home-text" id="contact">KONTAKT</p>
+  <div class="footer-info d-flex">
+    <div class="home-text45">
+      <img
+      src="/assets/foot-logo1.png"
+      alt="image436861"
+      class="home-image43"
+    />
+      <div class="home-text46">
+        <p>Internationaler Bund Polska</p>
+      </div>
+      <div class="footer-address">
+        <p>al. Daszyńskiego 22</p>          
+        <p>31-534 Kraków</p>          
+        <p>e-mail: ib-polska-krakow@ib.de</p>          
+        <p>tel: +48 12 686 53 80</p>
+      </div>
+    </div>
+    <div class="home-text45">
+      <img
+        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/c9802488-ff23-4ee6-86b0-3a25214bfb1a?org_if_sml=16842"
+        alt="image426861"
+        class="home-image42"
+      />
+      <div class="home-text46">
+        <p>Regionalny Ośrodek Polityki Społecznej w Krakowie</p>
+      </div>
+        <div class="footer-address">
+          <p>ul. Piastowska 32</p>
+          <p>30-070 Kraków</p>
+          <p>e-mail: iws@rops.krakow.pl</p>
+          <p>tel: +48 12 422 06 36</p>
+        </div>       
+    </div>
+    <div class="home-frame224">    
+      <p class="home-text58">Projekt zrealizowany we współpracy<p>
+      <div class="home-frame222">
+        <img
+          src="/assets/foot-logo2.png"
+          alt="image326861"
+          class="home-image32 top"
+        />
+        <img
+          src="/assets/foot-logo3.png"
+          alt="image326861"
+          class="home-image32"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>

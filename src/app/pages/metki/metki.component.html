@@ -1,0 +1,214 @@
+<div class="homepage">
+  <app-navbar (scrollToSection)="scrollTo($event)"></app-navbar>
+  <div class="content">
+      <br />
+      <br />
+      <br />
+      <div class="bar1" id="metki">
+          <span class="bar1-text">Jak zamówić metki?</span>
+      </div>
+      <br /><br />
+      <div class="wezyk">
+          <div class="wezyk-left">
+          </div>
+          <div class="metki-wezyk">
+              <div class="home-group14">
+                  <img class="jakzamowicmetki1" src="/assets/jakzamowicmetki1.png"
+                       alt="jakzamowicmetki1" />
+                  <div class="frame-text1">
+                      <div class="text1-punkt">
+                          01.
+                      </div>
+                      <div class="text1-info">
+                          <span class="text1-title">
+                              Zarejestruj się
+                          </span>
+                          <span class="text1-text">
+                              Załóż konto na naszej stronie. Możesz zrobić to samodzielnie lub z pomocą opiekuna.
+                          </span>
+                      </div>
+                  </div>
+                  <div class="frame-text2">
+                      <div class="text1-punkt">
+                          02.
+                      </div>
+                      <div class="text1-info">
+                          <span class="text1-title">
+                              Uzupełnij dane
+                          </span>
+                          <span class="text1-text">
+                              Uzupełnij dane na swoim koncie. Zdecyduj, które z nich będą widoczne po zeskanowaniu Twojego kodu QR.
+                          </span>
+                      </div>
+                  </div>
+                  <div class="frame-text3">
+                      <div class="text1-punkt">
+                          03.
+                      </div>
+                      <div class="text1-info">
+                          <span class="text1-title">
+                              Zamów metki i naklejki
+                          </span>
+                          <span class="text1-text">
+                              Zamów metki i naklejki z nadrukiem indywidualnego kodu QR.
+                          </span>
+                      </div>
+                  </div>
+                  <div class="frame-text4">
+                      <div class="text1-punkt">
+                          04.
+                      </div>
+                      <div class="text1-info">
+                          <span class="text1-title">
+                              Wszyj metki, naklej naklejki
+                          </span>
+                          <span class="text1-text">
+                              Wszyj metki i naklej naklejki do swoich ubrań. Noś je zawsze przy sobie.
+                          </span>
+                      </div>
+                  </div>
+                  <img src="/assets/metkiwezyk.png"
+                       alt="metkiDiagram" />
+              </div>
+          </div>
+          <div class="wezyk-right">
+              <img src="/assets/jakzamowicmetki2.png"
+                   alt="jakzamowicmetki2" class="jakzamowicmetki2" />
+          </div>
+      </div>
+
+      <br /><br /><br />
+      <div *ngIf="!isLogged" class="metki-registry">
+          <button routerLink="/register" class="metki-registry-button">
+              <span class="registry-button-text"><span>Zarejestruj się</span></span>
+              <img src="/assets/playground_assets/registryButtonNarrow.svg"
+                   alt="Component2I683"
+                   class="home-component2 non-contrast-img" />
+              <img src="/assets/arrow-right-contrast.png"
+                   class="home-component2 contrast-img" />
+          </button>
+          <span class="registry-button-undertext">
+              <span>Masz już konto?</span>
+              <span class="login" routerLink="/login">Zaloguj się.</span>
+          </span>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="bar2">
+          <span class="bar2-text">Co trzeba wiedzieć o formularzu?</span>
+      </div>
+      <br />
+      <div class="bar2-undertext">
+          Możesz podać mniej lub bardziej szczegółowe dane o zdrowiu. Mogą Ci w tym pomóc:
+          <ul style="list-style-position: inside">
+              <li>dokumentacja medyczna</li>
+              <li>informacje o przyjmowanych lekach</li>
+          </ul>
+          <br />
+          W formularzu zdecydujesz o zakresie informacji i ich widoczności po zeskanowaniu kodu. Weź przy tym pod uwagę, co może się przydać, aby szybko udzielić Ci pomocy. Kod może zeskanować przechodzień, ratownik medyczny lub lekarz.
+          <br />
+          <br />
+          Formularz możesz w każdej chwili zmienić, np. dodać, ukryć lub usunąć niektóre informacje. Nie będzie to miało wpływu na kod.
+      </div>
+      <br />
+      <br />
+      <div class="bar3">
+          <span class="bar2-text">Jakie dane będą do uzupełnienia?</span>
+      </div>
+      <br />
+      <div class="bar2-undertext">
+          Dane do uzupełnienia obejmują podstawowe informacje o Tobie, jak np.:
+          <ul style="list-style-position: inside">
+              <li>imię, nazwisko, rok urodzenia,</li>
+              <li>telefon kontaktowy do Twojego krewnego lub opiekuna,</li>
+              <li>istotne dane o Twoim zdrowiu, np. choroby przewlekłe, alergie czy przyjmowane leki.</li>
+          </ul>
+          <br />
+          W formularzu zdecydujesz o zakresie informacji i ich widoczności po zeskanowaniu kodu. Weź przy tym pod uwagę, co może się przydać, aby szybko udzielić Ci pomocy. Kod może zeskanować przechodzień, ratownik medyczny lub lekarz.
+          <br />
+          <br />
+          Formularz możesz w każdej chwili zmienić, np. dodać, ukryć lub usunąć niektóre informacje. Nie będzie to miało wpływu na kod.
+      </div>
+      <br />
+      <br />
+      <div class="bar4">
+          <span class="bar2-text">Na co uważać?</span>
+      </div>
+      <br />
+      <div class="bar2-undertext">
+          Kod może zeskanować każda osoba mająca smartfon. Z tego powodu nie umieszczaj kodu w widocznym dla wszystkich miejscu. Możesz wszyć go w wewnętrzną część wierzchniej odzieży lub przykleić go do przedmiotu, który zawsze masz przy sobie, np. do własnego smartfona czy portfela.
+      </div>
+      <br />
+      <br />
+      <div class="bar5">
+          <span class="bar2-text">Czy moje dane są bezpieczne?</span>
+      </div>
+      <br />
+      <div class="bar2-undertext">
+          Twoje dane podane na stronie internetowej są chronione. Po zeskanowaniu kodu dostępne będą tylko te dane, o których widoczności sam zdecydujesz w formularzu.
+      </div>
+      <br />
+      <br />
+      <br />
+  </div>
+ 
+  <!-- FOOTER -->
+  <div class="footer">
+<div class="footer-content">
+  <p class="home-text" id="contact">KONTAKT</p>
+  <div class="footer-info d-flex">
+    <div class="home-text45">
+      <img
+      src="/assets/foot-logo1.png"
+      alt="image436861"
+      class="home-image43"
+    />
+      <div class="home-text46">
+        <p>Internationaler Bund Polska</p>
+      </div>
+      <div class="footer-address">
+        <p>al. Daszyńskiego 22</p>          
+        <p>31-534 Kraków</p>          
+        <p>e-mail: ib-polska-krakow@ib.de</p>          
+        <p>tel: +48 12 686 53 80</p>
+      </div>
+    </div>
+    <div class="home-text45">
+      <img
+        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/c9802488-ff23-4ee6-86b0-3a25214bfb1a?org_if_sml=16842"
+        alt="image426861"
+        class="home-image42"
+      />
+      <div class="home-text46">
+        <p>Regionalny Ośrodek Polityki Społecznej w Krakowie</p>
+      </div>
+        <div class="footer-address">
+          <p>ul. Piastowska 32</p>
+          <p>30-070 Kraków</p>
+          <p>e-mail: iws@rops.krakow.pl</p>
+          <p>tel: +48 12 422 06 36</p>
+        </div>       
+    </div>
+    <div class="home-frame224">    
+      <p class="home-text58">Projekt zrealizowany we współpracy<p>
+      <div class="home-frame222">
+        <img
+          src="/assets/foot-logo2.png"
+          alt="image326861"
+          class="home-image32 top"
+        />
+        <img
+          src="/assets/foot-logo3.png"
+          alt="image326861"
+          class="home-image32"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>

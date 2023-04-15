@@ -1,0 +1,88 @@
+<div class="popup-one-container">
+    <div class="popup-box">      
+    <div (click)="closePopup()"  class="popup-one-frame24">
+        <img
+          src="/assets/close-popup.png"
+          alt="Vector4245"
+        />
+    </div>
+      <img
+        *ngIf="currentSlide === 0"
+        src="/assets/playground_assets/lineduotoneessentionaluihelp4245-jt.svg"
+        alt="LineDuotoneEssentionalUIHelp4245"
+        class="popup-one-line-duotone-essentional-u-i-help"
+     />
+      <div *ngIf="currentSlide === 0" class="popup-one-frame48" >
+        <span class="popup-one-text24">
+          <span>Poproś o pomoc, ale tylko zaufaną osobę!</span>
+        </span>
+        <span class="popup-one-text26">
+          Nie bój się poprosić o pomoc w wypełnieniu formularza bliską Ci osobę. Pamiętaj jednak, że dane te są poufne i należy je chronić przed dostępnem niepowołanych osób. 
+          <br><br>
+          Pamiętaj, że jeśli podasz komuś swój login i hasło, będzie ona miała pełny dostęp do Twojego konta i umieszczonych tam danych.
+        </span>
+      </div>
+      <img
+        *ngIf="currentSlide === 1"
+        src="/assets/playground_assets/lineduotonemedicineheartpulse24247-cmn6.svg"
+        alt="LineDuotoneMedicineHeartPulse24247"
+        class="popup-two-line-duotone-medicine-heart-pulse2"
+      />
+      <div *ngIf="currentSlide === 1" class="popup-one-frame48" >
+        <span class="popup-one-text24">
+          <span>Daj sobie pomóc</span>
+        </span>
+        <span class="popup-one-text26">
+          Uzupełnij możliwie najwięcej danych w formularzu. Każda informacja zwiększa szansę na pomoc Tobie w razie potrzeby. Dodatkowo, przy każdej informacji możesz zdecydować, czy chcesz, aby była ona widoczna po zeskanowaniu Twojego kodu QR. 
+          <br><br>
+          Kod QR jest przypisany do Twojego konta a nie formularza. Oznacza to, że edycja danych nie będzie wymagała ponownego generowania kodu QR, ponieważ sam kod pozostanie zawsze taki sam.
+        </span>
+      </div>
+      <img
+        *ngIf="currentSlide === 2" 
+        src="/assets/playground_assets/lineduotonesecurityeyescan4247-b09p.svg"
+        alt="LineDuotoneSecurityEyeScan4247"
+        class="popup-three-line-duotone-security-eye-scan"
+      />
+      <div *ngIf="currentSlide === 2" class="popup-one-frame48" >
+        <span class="popup-one-text24">
+          <span>Zachowaj ostrożność</span>
+        </span>
+        <span class="popup-one-text26">
+          Pamiętaj, że dostęp do danych, które oznaczysz jako widoczne po zeskanowaniu kodu QR jest możliwy przez każdą osobę posiadającą telefon komórkowy. Zachowaj więc szczególną ostrożność i umieść metki z kodem QR w mało widocznym miejscu, by uniknąć zeskanowania kodu przez osoby niepowołane. Najlepsza będzie do tego wewnętrzna strona kurtki czy innego ubrania lub wewnętrzna część buta.
+        </span>
+      </div>
+      <div class="popup-one-group22">
+        <img
+          *ngIf="currentSlide === 0"
+          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/b5949e53-1c60-4a69-b4dc-d719bd8922cb?org_if_sml=1301"
+          alt="Rectangle134245"
+          class="popup-one-rectangle13"
+        />
+        <img
+          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/ee10e973-d394-40ee-b44a-883a2ca9b4de?org_if_sml=1297"
+          alt="Rectangle114245"
+          class="popup-one-rectangle11"
+        />
+        <img
+          *ngIf="currentSlide === 1"
+          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/b5949e53-1c60-4a69-b4dc-d719bd8922cb?org_if_sml=1301"
+          alt="Rectangle134245"
+          class="popup-one-rectangle13"
+        />
+        <img
+          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/c6da7263-7f3f-42d2-8e79-690dc09b528d?org_if_sml=1297"
+          alt="Rectangle124245"
+          class="popup-one-rectangle12"
+        />
+        <img
+          *ngIf="currentSlide === 2"
+          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/c0b368fa-7a6a-43f2-bb9e-04372cc7fcb6/b5949e53-1c60-4a69-b4dc-d719bd8922cb?org_if_sml=1301"
+          alt="Rectangle134245"
+          class="popup-one-rectangle13"
+        />
+      </div>
+      <button (click)="nextPopup()" class="popup-one-button1">
+        <span class="popup-one-text31"><span>Dalej</span></span>
+      </button>
+</div>

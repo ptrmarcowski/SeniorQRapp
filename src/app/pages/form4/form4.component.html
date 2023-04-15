@@ -1,0 +1,95 @@
+
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="frame277">
+            <div class="frame272">
+                <span class="text-progressbar"><span>Część 1 - Dane najważniejsze</span></span>
+                <span class="text-progressbar"><span>3 / 5</span></span>
+            </div>
+            <div class="progress-line">
+                <div class="progress-line-blue"></div>
+                <div class="progress-line-white"></div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+        <form [formGroup]="userForm" class="form-formularzdanych">
+            <div formGroupName="address" class="form-section">
+                <div class="frame294">
+                    <span class="form-category-title"><span>Adres zamieszkania</span></span>
+                    <div class="frame263">
+                        <span class="form-text-visibility"><span>Czy chcesz, by te dane były widoczne?</span></span>
+                        <button [class.hidden]="!userForm.get(['address', 'streetVisibility'])?.value" class="form-button011 recommended">
+                            <img id="visibility" [src]="!userForm.get(['address', 'streetVisibility'])?.value ? '/assets/visibilityOff.png' :
+                        '/assets/visibilityOn.png'"
+                                 alt="UnionI394"
+                                 class="form-button-visibility" />
+                            <input style="cursor: pointer" type="checkbox" formControlName="streetVisibility" [checked]="userForm.get(['basic', 'streetVisibility'])?.value" />
+                        </button>
+                    </div>
+                </div>
+                <br /><br /><br />
+                <div class="section-content collapsed form-frame132" id="section1">
+                    <div class="form-frame134">
+                        <div class="form-input">
+                            <div class="form-label">
+                                <span class="form-text004"><span>Województwo</span></span>
+                            </div>
+                            <input type="text" formControlName="state" class="form-input01" />
+                        </div>
+                    </div>
+                    <div class="form-frame134">
+                        <div class="form-input02">
+                            <div class="form-label01">
+                                <span class="form-text008"><span>Miejscowość</span></span>
+                            </div>
+                            <input type="text" formControlName="city" class="form-input03" />
+                        </div>
+                        <div class="input-info">
+                        </div>
+                    </div>
+                    <div class="form-frame134">
+                        <div class="form-input04">
+                            <div class="form-label02">
+                                <span class="form-text012"><span>Ulica</span></span>
+                            </div>
+                            <input type="text" formControlName="street" class="form-input05" />
+                        </div>
+                        <div class="input-info">
+                            <div class="frame292">
+                                <img src="/assets/info.png" class="info" />
+                                <span><span class="text-info">Podanie ulicy może ułatwić Ci powrót do domu. <br />
+                                    Nie musisz podawać numeru budynku ani mieszkania.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+            <div class="bottom-btns d-flex">
+                <button class="button-wstecz" (click)="saveForm('back')">
+                    <img src="/assets/playground_assets/wstecz2.svg"
+                         alt="Wstecz" />
+                </button>
+                <button class="button-uzupelnijpozniej" (click)="saveForm('profile')">
+                    <img src="/assets/playground_assets/uzupelnij-pozniej.svg"
+                         alt="Uzupelnijpozniej" />
+                </button>
+                <button class="button-dalej" (click)="saveForm('next')">
+                    <img src="/assets/playground_assets/dalej2.svg"
+                         alt="Dalej" />
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

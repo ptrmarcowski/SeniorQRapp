@@ -1,0 +1,81 @@
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="frame277">
+            <div class="frame272">
+                <span class="text-progressbar"><span>Część 2 - Dane dodatkowe</span></span>
+                <span class="text-progressbar"><span>16 / 17</span></span>
+            </div>
+            <div class="progress-line">
+                <div class="progress-line-blue"></div>
+                <div class="progress-line-white"></div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+        <form [formGroup]="userForm" class="form-formularzdanych">
+            <div class="form-section">
+                <div class="form-section">
+                    <div class="frame294">
+                        <span class="form-category-title"><span>Informacja o chorobach wirusowych</span></span>
+                        <div class="frame263">
+                            <span class="form-text-visibility"><span>Czy chcesz, by te dane były widoczne?</span></span>
+                            <button [class.hidden]="!formValues.hivVisibility?.value" class="form-button011 recommended">
+                                <img [src]="!formValues.hivVisibility?.value ? '/assets/visibilityOff.png' :
+                        '/assets/visibilityOn.png'"
+                                     alt="UnionI394"
+                                     class="form-button-visibility" />
+                                <input style="cursor: pointer" type="checkbox" formControlName="hivVisibility" [checked]="formValues.hivVisibility?.value">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <span class="form-text090">
+                    <span>
+                        Informacje pomogą ratownikom medycznym i lekarzom udzielić pomocy z zachowaniem odpowiednich środków bezpieczeństwa.
+                    </span>
+                </span>
+                <br /><br /><br />
+                <div class="form-frame152">
+                    <div style="cursor: pointer" class="button-check">
+                        <label>
+                            <input type="checkbox" formControlName="hiv" [checked]="formValues.hiv.value"><span>Tak, jestem nosicielem wirusa HIV</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-frame153">
+                    <div style="cursor: pointer" class="button-check">
+                        <label>
+                            <input type="checkbox" formControlName="wzw" [checked]="formValues.wzw.value"><span>Tak, jestem nosicielem wirusa WZW B lub WZW C</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+                <br /><br />
+                <div class="bottom-btns d-flex">
+                    <button class="button-wstecz" (click)="saveForm('back')">
+                        <img src="/assets/playground_assets/wstecz2.svg"
+                             alt="Wstecz" />
+                    </button>
+                    <button class="button-uzupelnijpozniej" (click)="saveForm('profile')">
+                        <img src="/assets/playground_assets/uzupelnij-pozniej.svg"
+                             alt="Uzupelnijpozniej" />
+                    </button>
+                    <button class="button-dalej" (click)="saveForm('next')">
+                        <img src="/assets/playground_assets/dalej2.svg"
+                             alt="Dalej" />
+                    </button>
+                </div>
+            </form>
+    </div>
+</div>

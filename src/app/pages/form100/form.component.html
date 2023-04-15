@@ -1,0 +1,2402 @@
+<app-navbar></app-navbar>
+<div class="form-container">
+  <div class="form-wrapper">
+    <div class="form-frame99">
+      <span class="form-text605"><span>Uzupełnij swoje dane</span></span>
+      <span class="form-text607">
+        <span>
+          <span>
+            Uzupełnij możliwie najwięcej danych, by zmaksymalizować szanse na pomoc w razie potrzeby. 
+            Przy każdej informacji lub grupie informacji możesz zaznaczyć, czy chcesz, aby dane te były widoczne po zeskanowaniu Twojego kodu QR. 
+            Wystarczy, że klikniesz w ikonę kodu QR.
+          </span>
+          <br />
+          <span></span>
+          <br />
+          <span>
+            Pamiętaj, że w każdej chwili możesz edytować wprowadzone dane. Kod QR zawsze pozostanie taki sam.
+          </span>
+        </span>
+      </span>
+      <div class="form-frame202">
+        <div class="form-button blue">
+          <img
+            src="/assets/playground_assets/unioni425-lsl6.svg"
+            alt="UnionI425"
+            class="form-union15 non-contrast-img"
+          />          
+          <img
+            src="/assets/hidden-contrast-blue.png"
+            alt="UnionI425"
+            class="form-union15 contrast-img"
+          />
+          <span class="form-text614"><span>Ukryte</span></span>
+        </div>
+        <span class="form-text616">
+          <span>
+            Kolorem niebieskim oznaczone zostały dane, które mogą szczególnie pomóc w razie zaistniałej potrzeby.
+            Rekomendujemy, by były widoczne po zeskanowaniu kodu QR.
+          </span>
+        </span>
+      </div>
+    </div>
+    <form [formGroup]="userForm" class="form-formularzdanych">
+      <div formGroupName="basic" class="form-section">
+        <div (click)="toggleSection(1)" class="form-frame101">
+          <div class="form-frame130">
+            <img
+              src="/assets/playground_assets/lineduotoneusersuserid3935-ckhb.svg"
+              alt="LineDuotoneUsersUserId3935"
+              class="form-line-duotone-users-user-id non-contrast-img"
+            />
+            <img
+              src="/assets/sec1.png"
+              alt="LineDuotoneUsersUserId3935"
+              class="form-line-duotone-users-user-id contrast-img"
+            />
+            <span class="form-text"><span>Dane podstawowe</span></span>
+          </div>
+          <div id="collapse1" class="collapse-section collapsed">
+            <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+            <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+            <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+            <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+          </div>
+        </div>
+        <div class="section-content collapsed form-frame132" id="section1">
+          <div class="form-frame134">
+            <button [class.hidden]="!userForm.get(['basic', 'firstNameVisibility'])?.value" class="form-button011 recommended">
+              <img
+                [src]="!userForm.get(['basic', 'firstNameVisibility'])?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+                [src]="!userForm.get(['basic', 'firstNameVisibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="firstNameVisibility" [checked]="userForm.get(['basic', 'firstNameVisibility'])?.value">
+              <span *ngIf="!userForm.get(['basic', 'firstNameVisibility'])?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="userForm.get(['basic', 'firstNameVisibility'])?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="form-input">
+              <div class="form-label">
+                <span class="form-text004"><span>Imię</span></span>
+              </div>
+              <input type="text" formControlName="firstName" class="form-input01" />
+            </div>
+          </div>
+          <div class="form-frame134">
+            <button [class.hidden]="!userForm.get(['basic', 'lastNameVisibility'])?.value" class="form-button011 recommended">
+              <img
+                [src]="!userForm.get(['basic', 'lastNameVisibility'])?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+                [src]="!userForm.get(['basic', 'lastNameVisibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="lastNameVisibility" [checked]="userForm.get(['basic', 'lastNameVisibility'])?.value">
+              <span *ngIf="!userForm.get(['basic', 'lastNameVisibility'])?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="userForm.get(['basic', 'lastNameVisibility'])?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="form-input02">
+              <div class="form-label01">
+                <span class="form-text008"><span>Nazwisko</span></span>
+              </div>
+              <input type="text" formControlName="lastName" class="form-input03" />
+            </div>
+          </div>
+          <div class="form-frame134">
+            <button [class.hidden]="!userForm.get(['basic', 'yearOfBirthVisibility'])?.value" class="form-button011 recommended">
+              <img
+                [src]="!userForm.get(['basic', 'yearOfBirthVisibility'])?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+                [src]="!userForm.get(['basic', 'yearOfBirthVisibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="yearOfBirthVisibility" [checked]="userForm.get(['basic', 'yearOfBirthVisibility'])?.value">
+              <span *ngIf="!userForm.get(['basic', 'yearOfBirthVisibility'])?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="userForm.get(['basic', 'yearOfBirthVisibility'])?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="form-input04">
+              <div class="form-label02">
+                <span class="form-text012"><span>Rok urodzenia</span></span>
+              </div>
+              <input type="text" formControlName="yearOfBirth" class="form-input05" />
+            </div>
+          </div>
+          <div class="form-frame134">
+            <button [class.hidden]="!userForm.get(['basic', 'peselVisibility'])?.value" class="form-button011">
+              <img
+                [src]="!userForm.get(['basic', 'peselVisibility'])?.value ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+                [src]="!userForm.get(['basic', 'peselVisibility'])?.value ? '/assets/hidden-contrast.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="peselVisibility" [checked]="userForm.get(['basic', 'PESELVisibility'])?.value">
+              <span *ngIf="!userForm.get(['basic', 'peselVisibility'])?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="userForm.get(['basic', 'peselVisibility'])?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="form-input06">
+              <div class="form-label03">
+                <span class="form-text016"><span>PESEL</span></span>
+              </div>
+              <input type="text" formControlName="pesel" class="form-input07" />
+            </div>
+          </div>
+          <div class="form-frame1351 tel">
+            <button [class.hidden]="!userForm.get(['basic', 'phoneVisibility'])?.value" class="form-button011 recommended">
+              <img
+                [src]="!userForm.get(['basic', 'phoneVisibility'])?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+                [src]="!userForm.get(['basic', 'phoneVisibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="phoneVisibility" [checked]="userForm.get(['basic', 'phoneVisibility'])?.value">
+              <span *ngIf="!userForm.get(['basic', 'phoneVisibility'])?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="userForm.get(['basic', 'phoneVisibility'])?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div>
+              <div class="form-label03">
+                <span class="form-text016"><span>Tel do osoby kontaktowej [1]</span></span>
+              </div>
+              <div class="form-frame237">
+                <div class="form-input14">
+                  <div class="form-label070">
+                    <span class="form-text038"><span>Kod kierunkowy</span></span>
+                  </div>
+                  <input type="text" formControlName="phonePrefix" class="form-input15" />
+                </div>
+                <div class="form-input16">
+                  <div class="form-label070">
+                    <span class="form-text038"><span>Numer telefonu</span></span>
+                  </div>
+                  <input type="text" formControlName="phone" class="form-input17" />
+                </div>
+              </div>
+              <span class="info">
+                Zacznij od kodu kierunkowego. Dla Polski będzie to +48.<br>Następnie podaj 9-cyfrowy numer telefonu.
+              </span>
+            </div>
+          </div>
+          <div class="form-frame1351 tel">
+            <button [class.hidden]="!userForm.get(['basic', 'phone2Visibility'])?.value" class="form-button011 recommended">
+              <img
+                [src]="!userForm.get(['basic', 'phone2Visibility'])?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+                [src]="!userForm.get(['basic', 'phone2Visibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="phone2Visibility" [checked]="userForm.get(['basic', 'phone2Visibility'])?.value">
+              <span *ngIf="!userForm.get(['basic', 'phone2Visibility'])?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="userForm.get(['basic', 'phone2Visibility'])?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div>
+              <div class="form-label03">
+                <span class="form-text016"><span>Tel do osoby kontaktowej [2]</span></span>
+              </div>
+              <div class="form-frame237">
+                <div class="form-input14">
+                  <div class="form-label070">
+                    <span class="form-text038"><span>Kod kierunkowy</span></span>
+                  </div>
+                  <input type="text" formControlName="phone2Prefix" class="form-input15" />
+                </div>
+                <div class="form-input16">
+                  <div class="form-label070">
+                    <span class="form-text038"><span>Numer telefonu</span></span>
+                  </div>
+                  <input type="text" formControlName="phone2" class="form-input17" />
+                </div>
+              </div>
+              <span class="info">
+                Zacznij od kodu kierunkowego. Dla Polski będzie to +48.<br>Następnie podaj 9-cyfrowy numer telefonu.
+              </span>
+            </div>
+          </div>
+         </div>         
+    </div>
+
+    <div formGroupName="address" class="form-section">
+      <div (click)="toggleSection(2)" class="form-frame101">
+        <div class="form-frame130">
+          <img
+          src="/assets/playground_assets/lineduotonebuildinginfrastructurehome3935-j2j.svg"
+          alt="LineDuotoneBuildingInfrastructureHome3935"
+          class="form-line-duotone-building-infrastructure-home non-contrast-img"
+        />
+        <img
+          src="/assets/sec2.png"
+          alt="LineDuotoneUsersUserId3935"
+          class="form-line-duotone-building-infrastructure-home contrast-img"
+        />
+          <span class="form-text"><span>Adres zamieszkania</span></span>
+        </div>
+        <div id="collapse2" class="collapse-section collapsed">
+          <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+          <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+          <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+          <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+        </div>
+      </div>
+
+      <div class="section-content collapsed form-frame1341" id="section2">
+        <div class="form-frame1342">
+          <button [class.hidden]="!userForm.get(['address', 'streetVisibility'])?.value" class="form-button011 recommended">
+            <img
+              [src]="!userForm.get(['address', 'streetVisibility'])?.value ? '/assets/hidden-recommend.png' : 
+              '/assets/visible-icon.png'"
+              alt="UnionI394"
+              class="form-union11 non-contrast-img"
+            />
+            <img
+              [src]="!userForm.get(['address', 'streetVisibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+            />
+            <input type="checkbox" formControlName="streetVisibility" [checked]="userForm.get(['address', 'streetVisibility'])?.value">
+            <span *ngIf="!userForm.get(['address', 'streetVisibility'])?.value" class="form-text056">Ukryte</span>
+            <span *ngIf="userForm.get(['address', 'streetVisibility'])?.value" class="form-text056">Widoczne</span>
+          </button>
+          <div class="form-input12">
+            <div class="form-label06">
+              <span class="form-text034"><span>Ulica</span></span>
+            </div>
+            <input type="text" formControlName="street" class="form-input13" />
+          </div>
+        </div>
+        <div class="form-frame1351">
+          <button [class.hidden]="!userForm.get(['address', 'houseNoVisibility'])?.value" class="form-button011">
+            <img
+              [src]="!userForm.get(['address', 'houseNoVisibility'])?.value ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+              '/assets/visible-icon.png'"
+              alt="UnionI394"
+              class="form-union11 non-contrast-img"
+            />
+            <img
+              [src]="!userForm.get(['address', 'houseNoVisibility'])?.value ? '/assets/hidden-contrast.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+            />
+            <input type="checkbox" formControlName="houseNoVisibility" [checked]="userForm.get(['address', 'houseNoVisibility'])?.value">
+            <span *ngIf="!userForm.get(['address', 'houseNoVisibility'])?.value" class="form-text056">Ukryte</span>
+            <span *ngIf="userForm.get(['address', 'houseNoVisibility'])?.value" class="form-text056">Widoczne</span>
+          </button>
+          <div class="form-frame237">
+            <div class="form-input14">
+              <div class="form-label07">
+                <span class="form-text038"><span>Nr domu/budynku</span></span>
+              </div>
+              <input type="text" formControlName="houseNo" class="form-input15" />
+            </div>
+            <div class="form-input16">
+              <div class="form-label08">
+                <span class="form-text040"><span>Nr mieszkania</span></span>
+              </div>
+              <input type="text" formControlName="flatNo" class="form-input17" />
+            </div>
+          </div>
+        </div>
+        <div class="form-frame139">
+          <button [class.hidden]="!userForm.get(['address', 'postCodeVisibility'])?.value" class="form-button011">
+            <img
+              [src]="!userForm.get(['address', 'postCodeVisibility'])?.value ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+              '/assets/visible-icon.png'"
+              alt="UnionI394"
+              class="form-union11 non-contrast-img"
+            />
+            <img
+              [src]="!userForm.get(['address', 'postCodeVisibility'])?.value ? '/assets/hidden-contrast.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+            />
+            <input type="checkbox" formControlName="postCodeVisibility" [checked]="userForm.get(['address', 'postCodeVisibility'])?.value">
+            <span *ngIf="!userForm.get(['address', 'postCodeVisibility'])?.value" class="form-text056">Ukryte</span>
+            <span *ngIf="userForm.get(['address', 'postCodeVisibility'])?.value" class="form-text056">Widoczne</span>
+          </button>
+          <div class="form-input18">
+            <div class="form-label09">
+              <span class="form-text044"><span>Kod pocztowy</span></span>
+            </div>
+            <input type="text" formControlName="postCode" class="form-input19" />
+          </div>
+        </div>
+        <div class="form-frame1371">
+          <button [class.hidden]="!userForm.get(['address', 'cityVisibility'])?.value" class="form-button011 recommended">
+            <img
+              [src]="!userForm.get(['address', 'cityVisibility'])?.value ? '/assets/hidden-recommend.png' : 
+              '/assets/visible-icon.png'"
+              alt="UnionI394"
+              class="form-union11 non-contrast-img"
+            />
+            <img
+              [src]="!userForm.get(['address', 'cityVisibility'])?.value ? '/assets/hidden-contrast-blue.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+            />
+            <input type="checkbox" formControlName="cityVisibility" [checked]="userForm.get(['address', 'cityVisibility'])?.value">
+            <span *ngIf="!userForm.get(['address', 'cityVisibility'])?.value" class="form-text056">Ukryte</span>
+            <span *ngIf="userForm.get(['address', 'cityVisibility'])?.value" class="form-text056">Widoczne</span>
+          </button>
+          <div class="form-input20">
+            <div class="form-label10">
+              <span class="form-text048"><span>Miejscowość</span></span>
+            </div>
+            <input type="text" formControlName="city" class="form-input21" />
+          </div>
+        </div>
+        <div class="form-frame1381">
+          <button [class.hidden]="!userForm.get(['address', 'stateVisibility'])?.value" class="form-button011">
+            <img
+              [src]="!userForm.get(['address', 'stateVisibility'])?.value ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+              '/assets/visible-icon.png'"
+              alt="UnionI394"
+              class="form-union11 non-contrast-img"
+            />
+            <img
+              [src]="!userForm.get(['address', 'stateVisibility'])?.value ? '/assets/hidden-contrast.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+            />
+            <input type="checkbox" formControlName="stateVisibility" [checked]="userForm.get(['address', 'stateVisibility'])?.value">
+            <span *ngIf="!userForm.get(['address', 'stateVisibility'])?.value" class="form-text056">Ukryte</span>
+            <span *ngIf="userForm.get(['address', 'stateVisibility'])?.value" class="form-text056">Widoczne</span>
+          </button>
+          <div class="form-input22">
+            <div class="form-label11">
+              <span class="form-text052"><span>Województwo</span></span>
+            </div>
+            <input type="text" formControlName="state" class="form-input23" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div (click)="toggleSection(3)" class="form-frame101">
+        <div class="form-frame130">
+          <img
+            src="/assets/playground_assets/lineduotonemedicinedropperminimalistic3935-gw7m.svg"
+            alt="LineDuotoneMedicineDropperMinimalistic3935"
+            class="form-line-duotone-medicine-dropper-minimalistic non-contrast-img"
+          />
+          <img
+            src="/assets/sec3.png"
+            alt="LineDuotoneUsersUserId3935"
+            class="form-line-duotone-medicine-dropper-minimalistic contrast-img"
+          />
+          <span class="form-text"><span>Grupa krwi</span></span>
+        </div>
+        <div  id="collapse3" class="collapse-section collapsed">
+          <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+          <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+          <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+          <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+        </div>
+      </div>
+
+      <div class="section-content collapsed form-frame144" id="section3">
+        <button [class.hidden]="!formValues.bloodTypeVisibility?.value" class="form-button011">
+          <img
+            [src]="!formValues.bloodTypeVisibility?.value ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+            '/assets/visible-icon.png'"
+            alt="UnionI394"
+            class="form-union11 non-contrast-img"
+          />
+          <img
+            [src]="!formValues.bloodTypeVisibility?.value ? '/assets/hidden-contrast.png' : 
+            '/assets/visible-contrast.png'"
+            alt="UnionI394"
+            class="form-union11 contrast-img"
+            />
+          <input type="checkbox" formControlName="bloodTypeVisibility" [checked]="formValues.bloodTypeVisibility?.value">
+          <span *ngIf="!formValues.bloodTypeVisibility?.value" class="form-text056">Ukryte</span>
+          <span *ngIf="formValues.bloodTypeVisibility?.value" class="form-text056">Widoczne</span>
+        </button>
+        <div class="form-frame97">
+          <div class="form-frame95">
+            <div class="blood-row d-flex">
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.APlus" formControlName="bloodType">
+                    <span><b>A</b> Rh+</span>
+                </label>
+              </div>
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.BPlus" formControlName="bloodType">
+                    <span><b>B</b> Rh+</span>
+                </label>
+              </div>
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.ABPlus" formControlName="bloodType">
+                    <span><b>AB</b> Rh+</span>
+                </label>
+              </div>
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.ZeroPlus" formControlName="bloodType">
+                    <span><b>0</b> Rh+</span>
+                </label>
+              </div>
+            </div>
+            <div class="blood-row d-flex">
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.AMinus" formControlName="bloodType">
+                    <span><b>A</b> Rh-</span>
+                </label>
+              </div>
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.BMinus" formControlName="bloodType">
+                    <span><b>B</b> Rh-</span>
+                </label>
+              </div>
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.ABMinus" formControlName="bloodType">
+                    <span><b>AB</b> Rh-</span>
+                </label>
+              </div>
+              <div class="button-check blood">
+                <label>
+                  <input type="radio" [value]="bloodTypeEnum.ZeroMinus" formControlName="bloodType">
+                    <span><b>0</b> Rh-</span>
+                </label>
+              </div>
+            </div>
+            <span class="form-text090">
+              <span>
+                Uzupełnij tylko, jeśli masz ważny dokument potwierdzający wynik
+                grupy krwi. Może to być wpis w: dowodzie osobistym, karcie
+                identyfikacyjnej grupy krwi lub legitymacji honorowego dawcy
+                krwi. Dokument musi posiadać pieczątkę i podpis odpowiedniego
+                organu.
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <form class="form-section">
+      <div (click)="toggleSection(4)" class="form-frame101">
+        <div class="form-frame130">
+          <img
+            src="/assets/playground_assets/lineduotonemedicinebacteria3936-1yfp.svg"
+            alt="LineDuotoneMedicineBacteria3936"
+            class="form-line-duotone-medicine-bacteria non-contrast-img"
+          />
+          <img
+            src="/assets/sec4.png"
+            alt="LineDuotoneMedicineBacteria3936"
+            class="form-line-duotone-medicine-bacteria contrast-img"
+          />          
+          <span class="form-text"><span>Alergie</span></span>
+        </div>
+        <div id="collapse4" class="collapse-section collapsed">
+          <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+          <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+          <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+          <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+        </div>
+        </div>
+        <div class="section-content collapsed form-frame79" id="section4">
+          <div class="form-frame75">
+            <span class="form-text094"><span>Alergie na leki</span></span>
+            <div class="form-frame242">
+              <div class="form-inputform">
+                <button [class.hidden]="!drugAllergiesVisibility" class="form-button011">
+                  <img
+                    [src]="!drugAllergiesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                    '/assets/visible-icon.png'"
+                    alt="UnionI394"
+                    class="form-union11 non-contrast-img"
+                  />
+                  <img
+                  [src]="!drugAllergiesVisibility ? '/assets/hidden-contrast.png' : 
+                  '/assets/visible-contrast.png'"
+                  alt="UnionI394"
+                  class="form-union11 contrast-img"
+                  />
+                  <input type="checkbox" [(ngModel)]="drugAllergiesVisibility"
+                  name="drugAllergiesVisibility" id="drugAllergiesVisibility" [checked]="drugAllergiesVisibility">
+                  <span *ngIf="!drugAllergiesVisibility" class="form-text056">Ukryte</span>
+                  <span *ngIf="drugAllergiesVisibility" class="form-text056">Widoczne</span>
+                </button>
+                <div class="form-inputsignin">
+                  <input 
+                    type="text" 
+                    class="form-input24" 
+                    [(ngModel)]="medsAll"
+                    name="medsAll" id="medsAll"
+                  />
+                </div>
+                <button (click)="addAllergy(0)" [disabled]="!medsAll" class="remove-item form-button021">
+                  <img
+                    src="/assets/playground_assets/component2i150-swjo.svg"
+                    alt="Component2I150"
+                    class="form-component2"
+                  />
+                  <span class="form-text096"><span>Dodaj</span></span>
+                </button>
+              </div>
+              <div class="added-values">
+                <button *ngFor="let allergy of medsAllergiesList; let i = index">
+                  <div *ngIf="allergy.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{allergy}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeAllergy(i, 0)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                        />
+                        <img
+                          src="/assets/remove-contrast.png"
+                          alt="ButtonI150"
+                          class="form-button138 contrast-img"
+                        />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-frame761">
+            <span class="form-text122"><span>Alergie pokarmowe</span></span>
+            <div class="form-frame24201">
+              <div class="form-inputform01">
+                <button [class.hidden]="!foodAllergiesVisibility" class="form-button011">
+                  <img
+                    [src]="!foodAllergiesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                    '/assets/visible-icon.png'"
+                    alt="UnionI394"
+                    class="form-union11 non-contrast-img"
+                  />
+                  <img
+                  [src]="!foodAllergiesVisibility ? '/assets/hidden-contrast.png' : 
+                  '/assets/visible-contrast.png'"
+                  alt="UnionI394"
+                  class="form-union11 contrast-img"
+                  />
+                  <input type="checkbox" [(ngModel)]="foodAllergiesVisibility"
+                  name="foodAllergiesVisibility" id="foodAllergiesVisibility" [checked]="foodAllergiesVisibility">
+                  <span *ngIf="!foodAllergiesVisibility" class="form-text056">Ukryte</span>
+                  <span *ngIf="foodAllergiesVisibility" class="form-text056">Widoczne</span>
+                </button>
+                <div class="form-inputsignin01">
+                  <input 
+                  type="text" 
+                  class="form-input25" 
+                  [(ngModel)]="foodAll"
+                  name="foodAll" id="foodAll"
+                />
+                </div>
+                <button (click)="addAllergy(1)" [disabled]="!foodAll" class="remove-item form-button021">
+                  <img
+                    src="/assets/playground_assets/component2i150-fxvq.svg"
+                    alt="Component2I150"
+                    class="form-component201"
+                  />
+                  <span class="form-text124"><span>Dodaj</span></span>
+                </button>
+              </div>
+              <div class="added-values">
+                <button *ngFor="let allergy of foodAllergiesList; let i = index">
+                  <div *ngIf="allergy.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{allergy}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeAllergy(i, 1)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-frame151">
+            <span class="form-text144"><span>Inne alergie</span></span>
+            <div class="form-frame24202">
+              <div class="form-inputform02">
+                <button [class.hidden]="!otherAllergiesVisibility" class="form-button011">
+                  <img
+                    [src]="!otherAllergiesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                    '/assets/visible-icon.png'"
+                    alt="UnionI394"
+                    class="form-union11 non-contrast-img"
+                  />
+                  <img
+                  [src]="!otherAllergiesVisibility ? '/assets/hidden-contrast.png' : 
+                  '/assets/visible-contrast.png'"
+                  alt="UnionI394"
+                  class="form-union11 contrast-img"
+                  />
+                  <input type="checkbox" [(ngModel)]="otherAllergiesVisibility"
+                  name="otherAllergiesVisibility" id="otherAllergiesVisibility" [checked]="otherAllergiesVisibility">
+                  <span *ngIf="!otherAllergiesVisibility" class="form-text056">Ukryte</span>
+                  <span *ngIf="otherAllergiesVisibility" class="form-text056">Widoczne</span>
+                </button>
+                <div class="form-inputsignin02">
+                  <input 
+                    type="text" 
+                    class="form-input26" 
+                    [(ngModel)]="otherAll"
+                    name="otherAll" id="otherAll"
+                  />
+                </div>
+                <button (click)="addAllergy(2)" [disabled]="!otherAll" class="remove-item form-button021">
+                  <img
+                    src="/assets/playground_assets/component2i150-dls.svg"
+                    alt="Component2I150"
+                    class="form-component202"
+                  />
+                  <span class="form-text146"><span>Dodaj</span></span>
+                </button>
+              </div>
+              <div class="added-values">
+                <button *ngFor="let allergy of otherAllergiesList; let i = index">
+                  <div  *ngIf="allergy.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{allergy}}</span></span>
+                    <div class="form-frame24020">
+                    <div (click)="removeAllergy(i, 2)" class="form-frame23751">
+                      <img
+                        src="/assets/playground_assets/buttoni150-ssot.svg"
+                        alt="ButtonI150"
+                        class="form-button138 non-contrast-img"
+                        />
+                        <img
+                          src="/assets/remove-contrast.png"
+                          alt="ButtonI150"
+                          class="form-button138 contrast-img"
+                        />
+                      <span class="form-text571"><span>Usuń</span></span>
+                    </div>
+                  </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <form class="form-section">
+        <div (click)="toggleSection(5)" class="form-frame101">
+          <div class="form-frame130">
+            <img
+              src="/assets/playground_assets/lineduotonemedicinestethoscope3936-hvsg.svg"
+              alt="LineDuotoneMedicineStethoscope3936"
+              class="form-line-duotone-medicine-stethoscope non-contrast-img"
+            />
+            <img
+              src="/assets/sec5.png"
+              alt="LineDuotoneMedicineStethoscope3936"
+              class="form-line-duotone-medicine-stethoscope contrast-img"
+            />
+            <span class="form-text"><span>Choroby przewlekłe</span></span>
+          </div>
+          <div id="collapse5" class="collapse-section collapsed">
+            <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+            <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+            <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+            <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+          </div>
+          </div>
+
+          <div class="section-content collapsed form-frame131" id="section5">
+            <div class="form-frame108">
+              <span class="form-text162"><span>Układ krążenia</span></span>
+              <div (click)="toggleSection(6)" id="collapse6" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="section-content form-frame157" id="section6">
+              <span class="form-text164">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Nadciśnienie, Choroba wieńcowa, Zawał serca, Zaburzenia rytmu
+                    serca, Żylaki kończyn dolnych.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24203">
+                <div class="form-inputform03">
+                  <button [class.hidden]="!chronicDiseasesCirculatorySystemVisibility" class="form-button011">
+                    <img
+                      [src]="!chronicDiseasesCirculatorySystemVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!chronicDiseasesCirculatorySystemVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="chronicDiseasesCirculatorySystemVisibility"
+                    name="chronicDiseasesCirculatorySystemVisibility" id="chronicDiseasesCirculatorySystemVisibility" [checked]="chronicDiseasesCirculatorySystemVisibility">
+                    <span *ngIf="!chronicDiseasesCirculatorySystemVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="chronicDiseasesCirculatorySystemVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin03">
+                    <input
+                      type="text"
+                      class="form-input27"
+                      [(ngModel)]="circulation"
+                      name="circulation" id="circulation" />
+                  </div>
+                  <button (click)="addDisease(0)" [disabled]="!circulation" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-9kd.svg"
+                      alt="Component2I150"
+                      class="form-component203"
+                    />
+                    <span class="form-text169"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of circulationList; let i = index">
+                    <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                      <div class="form-frame24020">
+                        <div (click)="removeDisease(i, 0)" class="form-frame23751">
+                          <img
+                            src="/assets/playground_assets/buttoni150-ssot.svg"
+                            alt="ButtonI150"
+                            class="form-button138 non-contrast-img"
+                            />
+                            <img
+                              src="/assets/remove-contrast.png"
+                              alt="ButtonI150"
+                              class="form-button138 contrast-img"
+                            />
+                          <span class="form-text571"><span>Usuń</span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text189"><span>Układ pokarmowy</span></span>
+              <div (click)="toggleSection(7)" id="collapse7" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="section-content form-frame158" id="section7">
+              <span class="form-text191">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Owrzodzenie żołądka/dwunastnicy, Przepuklina rozworu
+                    przełykowego, Zespół jelita drażliwego.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24204">
+                <div class="form-inputform04">
+                  <button [class.hidden]="!chronicDiseasesDigestiveSystemVisibility" class="form-button011">
+                    <img
+                      [src]="!chronicDiseasesDigestiveSystemVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!chronicDiseasesDigestiveSystemVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="chronicDiseasesDigestiveSystemVisibility"
+                    name="chronicDiseasesDigestiveSystemVisibility" id="chronicDiseasesDigestiveSystemVisibility" [checked]="chronicDiseasesDigestiveSystemVisibility">
+                    <span *ngIf="!chronicDiseasesDigestiveSystemVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="chronicDiseasesDigestiveSystemVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin04">
+                    <input
+                      type="text"
+                      class="form-input28"
+                      [(ngModel)]="digest"
+                      name="digest" id="digest" />
+                  </div>
+                  <button (click)="addDisease(1)" [disabled]="!digest" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-1vcp.svg"
+                      alt="Component2I150"
+                      class="form-component204"
+                    />
+                    <span class="form-text196"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of digestList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 1)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-frame108">
+              <span class="form-text216"><span>Układ oddechowy</span></span>
+              <div (click)="toggleSection(8)" id="collapse8" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame159 section-content" id="section8">
+              <span class="form-text218">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Zapalenia płuc/oskrzeli, Przewlekłe zapalenie oskrzeli - POCHP,
+                    Astma oskrzelowa, Rozedma płuc, Gruźlica.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24205">
+                <div class="form-inputform05">
+                  <button [class.hidden]="!chronicDiseasesRespiratorySystemVisibility" class="form-button011">
+                    <img
+                      [src]="!chronicDiseasesRespiratorySystemVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!chronicDiseasesRespiratorySystemVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="chronicDiseasesRespiratorySystemVisibility"
+                    name="chronicDiseasesRespiratorySystemVisibility" id="chronicDiseasesRespiratorySystemVisibility" [checked]="chronicDiseasesRespiratorySystemVisibility">
+                    <span *ngIf="!chronicDiseasesRespiratorySystemVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="chronicDiseasesRespiratorySystemVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin05">
+                    <input type="text" class="form-input29" [(ngModel)]="respiratory"
+                    name="respiratory" id="respiratory" />
+                  </div>
+                  <button (click)="addDisease(2)" [disabled]="!respiratory" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-7yo.svg"
+                      alt="Component2I150"
+                      class="form-component205"
+                    />
+                    <span class="form-text223"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of respiratoryList; let i = index">
+                    <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 2)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                    </div>
+                  </button>
+                </div>              
+              </div>
+            </div>
+ 
+            <div class="form-frame108">
+              <span class="form-text231"><span>Choroby metaboliczne</span></span>
+              <div (click)="toggleSection(9)" id="collapse9" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame160 section-content" id="section9">
+              <span class="form-text233">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>Cukrzyca, Choroby tarczycy, Porfiria, Dna moczanowa.</span>
+                </span>
+              </span>
+              <div class="form-frame24206">
+                <div class="form-inputform06">
+                  <button [class.hidden]="!metabolicDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!metabolicDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!metabolicDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="metabolicDiseasesVisibility"
+                    name="metabolicDiseasesVisibility" id="metabolicDiseasesVisibility" [checked]="metabolicDiseasesVisibility">
+                    <span *ngIf="!metabolicDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="metabolicDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin06">
+                    <input type="text" class="form-input30" [(ngModel)]="metabolism"
+                    name="metabolism" id="metabolism" />
+                  </div>
+                  <button (click)="addDisease(3)" [disabled]="!metabolism" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-fuml.svg"
+                      alt="Component2I150"
+                      class="form-component206"
+                    />
+                    <span class="form-text238"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of metabolismList; let i = index">
+                  <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 3)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                  </div>
+                  </button>
+                </div>         
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text252"><span>Choroby NEREK</span></span>
+              <div (click)="toggleSection(10)" id="collapse10" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame161 section-content" id="section10">
+              <span class="form-text254">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Kamica, Przebyte zapalenie nerek, Trudności w oddawaniu moczu,
+                    Przerost prostaty.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24207">
+                <div class="form-inputform07">
+                  <button [class.hidden]="!kidneyDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!kidneyDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!kidneyDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="kidneyDiseasesVisibility"
+                    name="kidneyDiseasesVisibility" id="kidneyDiseasesVisibility" [checked]="kidneyDiseasesVisibility">
+                    <span *ngIf="!kidneyDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="kidneyDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin07">
+                    <input
+                      type="text"
+                      class="form-input31"
+                      [(ngModel)]="kidney"
+                      name="kidney" id="kidney" />
+                  </div>
+                  <button (click)="addDisease(4)" [disabled]="!kidney" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-zby.svg"
+                      alt="Component2I150"
+                      class="form-component207"
+                    />
+                    <span class="form-text259"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of kidneyList; let i = index">
+                    <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 4)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                    </div>
+                  </button>
+                </div>             
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text279"><span>Układ nerwowy</span></span>
+              <div (click)="toggleSection(11)" id="collapse11" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame162 section-content" id="section11">
+              <span class="form-text281">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Drgawki np. padaczka, Udar lub epizod niedokrwienia, Porażenie,
+                    Zaburzenia przepływu mózgowego, Zapalenie mózgu/opon mózgowych.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24208">
+                <div class="form-inputform08">
+                  <button [class.hidden]="!nervousSystemVisibility" class="form-button011">
+                    <img
+                      [src]="!nervousSystemVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!nervousSystemVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="nervousSystemVisibility"
+                    name="nervousSystemVisibility" id="nervousSystemVisibility" [checked]="nervousSystemVisibility">
+                    <span *ngIf="!nervousSystemVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="nervousSystemVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin08">
+                    <input type="text" class="form-input32" [(ngModel)]="nervous"
+                    name="nervous" id="nervous" />
+                  </div>
+                  <button (click)="addDisease(5)" [disabled]="!nervous" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-ecg9.svg"
+                      alt="Component2I150"
+                      class="form-component208"
+                    />
+                    <span class="form-text286"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of nervousList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 5)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                  </button>
+                </div>              
+              </div>
+            </div>
+            <div class="form-frame108 ">
+              <span class="form-text306"><span>Układ nerwowo-mięsniowy</span></span>
+              <div (click)="toggleSection(12)" id="collapse12" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame163 section-content" id="section12">
+              <span class="form-text308">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Wiotkość mięśni, Choroby mięśniowe w rodzinie, Dystrofie
+                    mięśniowe.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24209">
+                <div class="form-inputform09">
+                  <button [class.hidden]="!neuromuscularSystemVisibility" class="form-button011">
+                    <img
+                      [src]="!neuromuscularSystemVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!neuromuscularSystemVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="neuromuscularSystemVisibility"
+                    name="neuromuscularSystemVisibility" id="neuromuscularSystemVisibility" [checked]="neuromuscularSystemVisibility">
+                    <span *ngIf="!neuromuscularSystemVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="neuromuscularSystemVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin09">
+                    <input type="text" class="form-input33" [(ngModel)]="muscle"
+                    name="muscle" id="muscle" />
+                  </div>
+                  <button (click)="addDisease(6)" [disabled]="!muscle" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-e2oa.svg"
+                      alt="Component2I150"
+                      class="form-component209"
+                    />
+                    <span class="form-text313"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of muscleList; let i = index">
+                  <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 6)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                  </div>
+                  </button>
+                </div>      
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text327"><span>Choroby wątroby</span></span>
+              <div (click)="toggleSection(13)" id="collapse13" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame164 section-content" id="section13">
+              <span class="form-text329">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>Żółtaczka, Marskość wątroby.</span>
+                </span>
+              </span>
+              <div class="form-frame24210">
+                <div class="form-inputform10">
+                  <button [class.hidden]="!liverDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!liverDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!liverDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="liverDiseasesVisibility"
+                    name="liverDiseasesVisibility" id="liverDiseasesVisibility" [checked]="liverDiseasesVisibility">
+                    <span *ngIf="!liverDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="liverDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin10">
+                    <input
+                      type="text"
+                      class="form-input34"
+                      [(ngModel)]="liver"
+                      name="liver" id="liver" />
+                  </div>
+                  <button (click)="addDisease(7)" [disabled]="!liver" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-508.svg"
+                      alt="Component2I150"
+                      class="form-component210"
+                    />
+                    <span class="form-text334"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of liverList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 7)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                  </button>
+                </div>    
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text354"><span>Układ kostny</span></span>
+              <div (click)="toggleSection(14)" id="collapse14" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame165 section-content" id="section14">
+              <span class="form-text356">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Utrudniona sprawność ruchowa (w stopniu znacznym), Choroby
+                    kręgosłupa, Choroba reumatyczne np. RZS.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24211">
+                <div class="form-inputform11">
+                  <button [class.hidden]="!boneStructureDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!boneStructureDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!boneStructureDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="boneStructureDiseasesVisibility"
+                    name="boneStructureDiseasesVisibility" id="boneStructureDiseasesVisibility" [checked]="boneStructureDiseasesVisibility">
+                    <span *ngIf="!boneStructureDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="boneStructureDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin11">
+                    <input
+                      type="text"
+                      class="form-input35"
+                      [(ngModel)]="bone"
+                      name="bone" id="bone"
+                    />
+                  </div>
+                  <button (click)="addDisease(8)" [disabled]="!bone" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-xox.svg"
+                      alt="Component2I150"
+                      class="form-component211"
+                    />
+                    <span class="form-text361"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of boneList; let i = index">
+                    <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 8)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                    </div>
+                  </button>
+                </div> 
+              </div>
+            </div>
+      
+            <div class="form-frame108">
+              <span class="form-text381"><span>Choroby oczu</span></span>
+              <div (click)="toggleSection(15)" id="collapse15" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame166 section-content" id="section15">
+              <span class="form-text383">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>Jaskra, Zaćma.</span>
+                </span>
+              </span>
+              <div class="form-frame24212">
+                <div class="form-inputform12">
+                  <button [class.hidden]="!eyeDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!eyeDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!eyeDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="eyeDiseasesVisibility"
+                    name="eyeDiseasesVisibility" id="eyeDiseasesVisibility" [checked]="eyeDiseasesVisibility">
+                    <span *ngIf="!eyeDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="eyeDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin12">
+                    <input type="text" class="form-input36" [(ngModel)]="eye"
+                    name="eye" id="eye" />
+                  </div>
+                  <button (click)="addDisease(9)" [disabled]="!eye" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-uhdo.svg"
+                      alt="Component2I150"
+                      class="form-component212"
+                    />
+                    <span class="form-text388"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of eyeList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 9)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text402"><span>Choroby uszu</span></span>
+              <div (click)="toggleSection(16)" id="collapse16" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame167 section-content" id="section16">
+              <span class="form-text404">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Osłabienie słuchu (w stopniu znacznym), Zaburzenia równowagi.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24213">
+                <div class="form-inputform13">
+                  <button [class.hidden]="!earDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!earDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!earDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="earDiseasesVisibility"
+                    name="earDiseasesVisibility" id="earDiseasesVisibility" [checked]="earDiseasesVisibility">
+                    <span *ngIf="!earDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="earDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin13">
+                    <input type="text" class="form-input37" [(ngModel)]="ear"
+                    name="ear" id="ear" />
+                  </div>
+                  <button (click)="addDisease(10)" [disabled]="!ear" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-icqs.svg"
+                      alt="Component2I150"
+                      class="form-component213"
+                    />
+                    <span class="form-text409"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of earList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 10)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text429"><span>CHOROBY psychczne</span></span>
+              <div (click)="toggleSection(17)" id="collapse17" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame168 section-content" id="section17">
+              <span class="form-text431">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>Otępienie, Nerwica, Anoreksja, Depresja, Autyzm.</span>
+                </span>
+              </span>
+              <div class="form-frame24214">
+                <div class="form-inputform14">
+                  <button [class.hidden]="!mentalDisordersVisibility" class="form-button011">
+                    <img
+                      [src]="!mentalDisordersVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!mentalDisordersVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="mentalDisordersVisibility"
+                    name="mentalDisordersVisibility" id="mentalDisordersVisibility" [checked]="mentalDisordersVisibility">
+                    <span *ngIf="!mentalDisordersVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="mentalDisordersVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin14">
+                    <input type="text" class="form-input38" [(ngModel)]="mental"
+                    name="mental" id="mental" />
+                  </div>
+                  <button (click)="addDisease(11)" [disabled]="!mental" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-q48.svg"
+                      alt="Component2I150"
+                      class="form-component214"
+                    />
+                    <span class="form-text436"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of mentalList; let i = index">
+                    <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 11)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                    </div>
+                  </button>
+                </div>          
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text444">
+                <span>Choroby krwi lub zaburzenia krzepnięcia</span>
+              </span>
+              <div (click)="toggleSection(18)" id="collapse18" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame169 section-content" id="section18">
+              <span class="form-text446">
+                <span>
+                  <span>Najczęstsze choroby:</span>
+                  <br />
+                  <span>
+                    Anemia, Samoistne krwawienia z nosa/dziąseł, Skłonność do
+                    powstawania siniaków, Utrudnione gojenie ran, Zaburzenia
+                    krzepliwości, Zaburzenia krzepliwości w rodzinie.
+                  </span>
+                </span>
+              </span>
+              <div class="form-frame24215">
+                <div class="form-inputform15">
+                  <button [class.hidden]="!bloodDiseasesVisibility" class="form-button011">
+                    <img
+                      [src]="!bloodDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                      '/assets/visible-icon.png'"
+                      alt="UnionI394"
+                      class="form-union11 non-contrast-img"
+                    />
+                    <img
+                    [src]="!bloodDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                    '/assets/visible-contrast.png'"
+                    alt="UnionI394"
+                    class="form-union11 contrast-img"
+                    />
+                    <input type="checkbox" [(ngModel)]="bloodDiseasesVisibility"
+                    name="bloodDiseasesVisibility" id="bloodDiseasesVisibility" [checked]="bloodDiseasesVisibility">
+                    <span *ngIf="!bloodDiseasesVisibility" class="form-text056">Ukryte</span>
+                    <span *ngIf="bloodDiseasesVisibility" class="form-text056">Widoczne</span>
+                  </button>
+                  <div class="form-inputsignin15">
+                    <input
+                      type="text"
+                      class="form-input39"
+                      name="blood" id="blood" [(ngModel)]="blood"
+                    />
+                  </div>
+                  <button (click)="addDisease(12)" [disabled]="!blood" class="remove-item form-button021">
+                    <img
+                      src="/assets/playground_assets/component2i150-hicp.svg"
+                      alt="Component2I150"
+                      class="form-component215"
+                    />
+                    <span class="form-text451"><span>Dodaj</span></span>
+                  </button>
+                </div>
+                <div class="added-values">
+                  <button *ngFor="let disease of bloodList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 12)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                  </button>
+                </div>               
+              </div>
+            </div>
+            <div class="form-frame108">
+              <span class="form-text471"><span>inne</span></span>
+              <div (click)="toggleSection(19)" id="collapse19" class="collapse-section">
+                <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+                <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+                <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+                <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+              </div>
+            </div>
+            <div class="form-frame173 section-content" id="section19">
+              <div class="form-frame176">
+                <span class="form-text473">
+                  <span>Przebyte operacje/zabiegi:</span>
+                </span>
+                <div class="form-frame24216">
+                  <div class="form-inputform16">
+                    <button [class.hidden]="!pastSurgeriesProceduresVisibility" class="form-button011">
+                      <img
+                        [src]="!pastSurgeriesProceduresVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                        '/assets/visible-icon.png'"
+                        alt="UnionI394"
+                        class="form-union11 non-contrast-img"
+                      />
+                      <img
+                      [src]="!pastSurgeriesProceduresVisibility ? '/assets/hidden-contrast.png' : 
+                      '/assets/visible-contrast.png'"
+                      alt="UnionI394"
+                      class="form-union11 contrast-img"
+                      />
+                      <input type="checkbox" [(ngModel)]="pastSurgeriesProceduresVisibility"
+                      name="pastSurgeriesProceduresVisibility" id="pastSurgeriesProceduresVisibility" [checked]="pastSurgeriesProceduresVisibility">
+                      <span *ngIf="!pastSurgeriesProceduresVisibility" class="form-text056">Ukryte</span>
+                      <span *ngIf="pastSurgeriesProceduresVisibility" class="form-text056">Widoczne</span>
+                    </button>
+                    <div class="form-inputsignin16">
+                      <input type="text" class="form-input40" [(ngModel)]="procedures"
+                      name="procedures" id="procedures" />
+                    </div>
+                    <button (click)="addDisease(13)" [disabled]="!procedures" class="remove-item form-button021">
+                      <img
+                        src="/assets/playground_assets/component2i150-2qcd.svg"
+                        alt="Component2I150"
+                        class="form-component216"
+                      />
+                      <span class="form-text475"><span>Dodaj</span></span>
+                    </button>
+                  </div>
+                  <div class="added-values">
+                    <button *ngFor="let procedure of proceduresList; let i = index">
+                      <div *ngIf="procedure.length > 0" class="added-value">
+                        <span class="form-text567"><span>{{procedure}}</span></span>
+                      <div class="form-frame24020">
+                        <div (click)="removeDisease(i, 13)" class="form-frame23751">
+                          <img
+                            src="/assets/playground_assets/buttoni150-ssot.svg"
+                            alt="ButtonI150"
+                            class="form-button138 non-contrast-img"
+                            />
+                            <img
+                              src="/assets/remove-contrast.png"
+                              alt="ButtonI150"
+                              class="form-button138 contrast-img"
+                            />
+                          <span class="form-text571"><span>Usuń</span></span>
+                        </div>
+                      </div>
+                      </div>
+                    </button>
+                  </div>             
+                </div>
+              </div>
+              <div class="form-frame172">
+                <span class="form-text489">
+                  <span>Choroby autoimmunologiczne:</span>
+                </span>
+                <div class="form-frame24217">
+                  <div class="form-inputform17">
+                    <button [class.hidden]="!autoimmuneDiseasesVisibility" class="form-button011">
+                      <img
+                        [src]="!autoimmuneDiseasesVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                        '/assets/visible-icon.png'"
+                        alt="UnionI394"
+                        class="form-union11 non-contrast-img"
+                      />     
+                      <img
+                      [src]="!autoimmuneDiseasesVisibility ? '/assets/hidden-contrast.png' : 
+                      '/assets/visible-contrast.png'"
+                      alt="UnionI394"
+                      class="form-union11 contrast-img"
+                      />
+                      <input type="checkbox" [(ngModel)]="autoimmuneDiseasesVisibility"
+                      name="autoimmuneDiseasesVisibility" id="autoimmuneDiseasesVisibility" [checked]="autoimmuneDiseasesVisibility">
+                      <span *ngIf="!autoimmuneDiseasesVisibility" class="form-text056">Ukryte</span>
+                      <span *ngIf="autoimmuneDiseasesVisibility" class="form-text056">Widoczne</span>
+                    </button>
+                    <div class="form-inputsignin17">
+                      <input type="text" class="form-input41" [(ngModel)]="immuno"
+                      name="immuno" id="immuno" />
+                    </div>
+                    <button (click)="addDisease(14)" [disabled]="!immuno" class="remove-item form-button021">
+                      <img
+                        src="/assets/playground_assets/component2i150-m5iq.svg"
+                        alt="Component2I150"
+                        class="form-component217"
+                      />
+                      <span class="form-text491"><span>Dodaj</span></span>
+                    </button>
+                  </div>
+                  <div class="added-values">
+                    <button *ngFor="let disease of immunoList; let i = index">
+                     <div  *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                      <div class="form-frame24020">
+                        <div (click)="removeDisease(i, 14)" class="form-frame23751">
+                          <img
+                            src="/assets/playground_assets/buttoni150-ssot.svg"
+                            alt="ButtonI150"
+                            class="form-button138 non-contrast-img"
+                            />
+                            <img
+                              src="/assets/remove-contrast.png"
+                              alt="ButtonI150"
+                              class="form-button138 contrast-img"
+                            />
+                          <span class="form-text571"><span>Usuń</span></span>
+                        </div>
+                      </div>
+                     </div>
+                    </button>
+                  </div>               
+                </div>
+              </div>
+              <div class="form-frame175">
+                <span class="form-text511">
+                  <span>Leczenia immunosupresyjne:</span>
+                </span>
+                <div class="form-frame24218">
+                  <div class="form-inputform18">
+                    <button [class.hidden]="!immunosuppressiveTreatmentsVisibility" class="form-button011">
+                      <img
+                        [src]="!immunosuppressiveTreatmentsVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                        '/assets/visible-icon.png'"
+                        alt="UnionI394"
+                        class="form-union11 non-contrast-img"
+                      />
+                      <img
+                      [src]="!immunosuppressiveTreatmentsVisibility ? '/assets/hidden-contrast.png' : 
+                      '/assets/visible-contrast.png'"
+                      alt="UnionI394"
+                      class="form-union11 contrast-img"
+                      />
+                      <input type="checkbox" [(ngModel)]="immunosuppressiveTreatmentsVisibility"
+                      name="immunosuppressiveTreatmentsVisibility" id="immunosuppressiveTreatmentsVisibility" [checked]="immunosuppressiveTreatmentsVisibility">
+                      <span *ngIf="!immunosuppressiveTreatmentsVisibility" class="form-text056">Ukryte</span>
+                      <span *ngIf="immunosuppressiveTreatmentsVisibility" class="form-text056">Widoczne</span>
+                    </button>
+                    <div class="form-inputsignin18">
+                      <input type="text" class="form-input42" [(ngModel)]="immunoTreatment"
+                      name="immunoTreatment" id="immunoTreatment" />
+                    </div>
+                    <button (click)="addDisease(15)" [disabled]="!immunoTreatment" class="remove-item form-button021">
+                      <img
+                        src="/assets/playground_assets/component2i150-63mc.svg"
+                        alt="Component2I150"
+                        class="form-component218"
+                      />
+                      <span class="form-text513"><span>Dodaj</span></span>
+                    </button>
+                  </div>
+                  <div *ngIf="immunoTreatmentList.length > 0" class="added-values">
+                    <button *ngFor="let disease of immunoTreatmentList; let i = index">
+                      <div class="added-value" *ngIf="disease.length">
+                        <span class="form-text567"><span>{{disease}}</span></span>
+                        <div class="form-frame24020">
+                          <div (click)="removeDisease(i, 15)" class="form-frame23751">
+                            <img
+                              src="/assets/playground_assets/buttoni150-ssot.svg"
+                              alt="ButtonI150"
+                              class="form-button138 non-contrast-img"
+                              />
+                              <img
+                                src="/assets/remove-contrast.png"
+                                alt="ButtonI150"
+                                class="form-button138 contrast-img"
+                              />
+                            <span class="form-text571"><span>Usuń</span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>               
+                </div>
+              </div>
+              <div class="form-frame174">
+                <span class="form-text521">
+                  <span>Choroba nowotworowa - przebyta:</span>
+                </span>
+                <div class="form-frame24219">
+                  <div class="form-inputform19">
+                    <button [class.hidden]="!pastCancerVisibility" class="form-button011">
+                      <img
+                        [src]="!pastCancerVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                        '/assets/visible-icon.png'"
+                        alt="UnionI394"
+                        class="form-union11 non-contrast-img"
+                      />
+                      <img
+                      [src]="!pastCancerVisibility ? '/assets/hidden-contrast.png' : 
+                      '/assets/visible-contrast.png'"
+                      alt="UnionI394"
+                      class="form-union11 contrast-img"
+                      />
+                      <input type="checkbox" [(ngModel)]="pastCancerVisibility"
+                      name="pastCancerVisibility" id="pastCancerVisibility" [checked]="pastCancerVisibility">
+                      <span *ngIf="!pastCancerVisibility" class="form-text056">Ukryte</span>
+                      <span *ngIf="pastCancerVisibility" class="form-text056">Widoczne</span>
+                    </button>
+                    <div class="form-inputsignin19">
+                      <input type="text" class="form-input43" [(ngModel)]="oldCancer"
+                      name="oldCancer" id="oldCancer" />
+                    </div>
+                    <button (click)="addDisease(16)" [disabled]="!oldCancer" class="remove-item form-button021">
+                      <img
+                        src="/assets/playground_assets/component2i150-ng6i.svg"
+                        alt="Component2I150"
+                        class="form-component219"
+                      />
+                      <span class="form-text523"><span>Dodaj</span></span>
+                    </button>
+                  </div>
+                  <div class="added-values">
+                    <button *ngFor="let disease of oldCancerList; let i = index">
+                     <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                      <div class="form-frame24020">
+                        <div (click)="removeDisease(i, 16)" class="form-frame23751">
+                          <img
+                            src="/assets/playground_assets/buttoni150-ssot.svg"
+                            alt="ButtonI150"
+                            class="form-button138 non-contrast-img"
+                            />
+                            <img
+                              src="/assets/remove-contrast.png"
+                              alt="ButtonI150"
+                              class="form-button138 contrast-img"
+                            />
+                          <span class="form-text571"><span>Usuń</span></span>
+                        </div>
+                      </div>
+                     </div>
+                    </button>
+                  </div>            
+                </div>
+              </div>
+              <div class="form-frame1731">
+                <span class="form-text531">
+                  <span>Choroba nowotworowa - aktualna:</span>
+                </span>
+                <div class="form-frame24220">
+                  <div class="form-inputform20">
+                    <button [class.hidden]="!currentCancerVisibility" class="form-button011">
+                      <img
+                        [src]="!currentCancerVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                        '/assets/visible-icon.png'"
+                        alt="UnionI394"
+                        class="form-union11 non-contrast-img"
+                      />
+                      <img
+                      [src]="!currentCancerVisibility ? '/assets/hidden-contrast.png' : 
+                      '/assets/visible-contrast.png'"
+                      alt="UnionI394"
+                      class="form-union11 contrast-img"
+                      />
+                      <input type="checkbox" [(ngModel)]="currentCancerVisibility"
+                      name="currentCancerVisibility" id="currentCancerVisibility" [checked]="currentCancerVisibility">
+                      <span *ngIf="!currentCancerVisibility" class="form-text056">Ukryte</span>
+                      <span *ngIf="currentCancerVisibility" class="form-text056">Widoczne</span>
+                    </button>
+                    <div class="form-inputsignin20">
+                      <input type="text" class="form-input44" [(ngModel)]="cancer"
+                      name="cancer" id="cancer" />
+                    </div>
+                    <button (click)="addDisease(17)" [disabled]="!cancer" class="remove-item form-button021">
+                      <img
+                        src="/assets/playground_assets/component2i150-0wq6.svg"
+                        alt="Component2I150"
+                        class="form-component220"
+                      />
+                      <span class="form-text533"><span>Dodaj</span></span>
+                    </button>
+                  </div>
+                  <div class="added-values">
+                    <button *ngFor="let disease of cancerList; let i = index">
+                     <div *ngIf="disease.length > 0" class="added-value">
+                      <span class="form-text567"><span>{{disease}}</span></span>
+                      <div class="form-frame24020">
+                        <div (click)="removeDisease(i, 17)" class="form-frame23751">
+                          <img
+                            src="/assets/playground_assets/buttoni150-ssot.svg"
+                            alt="ButtonI150"
+                            class="form-button138 non-contrast-img"
+                            />
+                            <img
+                              src="/assets/remove-contrast.png"
+                              alt="ButtonI150"
+                              class="form-button138 contrast-img"
+                            />
+                          <span class="form-text571"><span>Usuń</span></span>
+                        </div>
+                      </div>
+                     </div>
+                    </button>
+                  </div>            
+                </div>
+              </div>
+              <div class="form-frame171">
+                <span class="form-text541">
+                  <span class="form-text542">
+                    Implanty (poza stomatologicznymi):
+                  </span>
+                </span>
+                <div class="form-frame24221">
+                  <div class="form-inputform21">
+                    <button [class.hidden]="!implantsVisibility" class="form-button011">
+                      <img
+                        [src]="!implantsVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                        '/assets/visible-icon.png'"
+                        alt="UnionI394"
+                        class="form-union11 non-contrast-img"
+                      />
+                      <img
+                      [src]="!implantsVisibility ? '/assets/hidden-contrast.png' : 
+                      '/assets/visible-contrast.png'"
+                      alt="UnionI394"
+                      class="form-union11 contrast-img"
+                      />
+                      <input type="checkbox" [(ngModel)]="implantsVisibility"
+                      name="implantsVisibility" id="implantsVisibility" [checked]="implantsVisibility">
+                      <span *ngIf="!implantsVisibility" class="form-text056">Ukryte</span>
+                      <span *ngIf="implantsVisibility" class="form-text056">Widoczne</span>
+                    </button>
+                    <div class="form-inputsignin21">
+                      <input type="text" class="form-input45"
+                      [(ngModel)]="implants"
+                  name="implants" id="implants" />
+                    </div>
+                    <button (click)="addDisease(18)" [disabled]="!implants" class="remove-item form-button021">
+                      <img
+                        src="/assets/playground_assets/component2i150-arr9.svg"
+                        alt="Component2I150"
+                        class="form-component221"
+                      />
+                      <span class="form-text543"><span>Dodaj</span></span>
+                    </button>
+                  </div>
+                  <div class="added-values">
+                    <button *ngFor="let disease of implantsList; let i = index">
+                   <div *ngIf="disease.length > 0" class="added-value">
+                    <span class="form-text567"><span>{{disease}}</span></span>
+                    <div class="form-frame24020">
+                      <div (click)="removeDisease(i, 18)" class="form-frame23751">
+                        <img
+                          src="/assets/playground_assets/buttoni150-ssot.svg"
+                          alt="ButtonI150"
+                          class="form-button138 non-contrast-img"
+                          />
+                          <img
+                            src="/assets/remove-contrast.png"
+                            alt="ButtonI150"
+                            class="form-button138 contrast-img"
+                          />
+                        <span class="form-text571"><span>Usuń</span></span>
+                      </div>
+                    </div>
+                   </div>
+                    </button>
+                  </div>       
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>     
+
+    <div class="form-section">
+      <div (click)="toggleSection(20)" class="form-frame101">
+        <div class="form-frame130">
+          <img
+            src="/assets/playground_assets/lineduotonemedicinevirus3936-qgyd.svg"
+            alt="LineDuotoneMedicineVirus3936"
+            class="form-line-duotone-medicine-virus non-contrast-img"
+          />
+          <img
+            src="/assets/sec6.png"
+            alt="LineDuotoneMedicineVirus3936"
+            class="form-line-duotone-medicine-virus contrast-img"
+          />
+          <span class="form-text"><span>Informacja o chorobach wirusowych</span></span>
+        </div>
+        <div id="collapse20" class="collapse-section collapsed">
+          <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+          <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+          <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+          <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+        </div>
+         </div>
+
+         <div class="form-frame1711 collapsed section-content" id="section20">
+          <div class="form-frame152">
+            <button [class.hidden]="!formValues.hivVisibility?.value" class="form-button011 recommended">
+              <img
+                [src]="!formValues.hivVisibility?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+              [src]="!formValues.hivVisibility?.value ? '/assets/hidden-contrast-blue.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="hivVisibility" [checked]="formValues.hivVisibility?.value">
+              <span *ngIf="!formValues.hivVisibility?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="formValues.hivVisibility?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="button-check">
+              <label>
+                <input type="checkbox" formControlName="hiv" [checked]="formValues.hiv.value"><span>Tak, jestem nosicielem wirusa HIV</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-frame153">
+            <button [class.hidden]="!formValues.wzwVisibility?.value" class="form-button011 recommended">
+              <img
+                [src]="!formValues.wzwVisibility?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+              [src]="!formValues.wzwVisibility?.value ? '/assets/hidden-contrast-blue.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="wzwVisibility" [checked]="formValues.wzwVisibility?.value">
+              <span *ngIf="!formValues.wzwVisibility?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="formValues.wzwVisibility?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="button-check">
+              <label>
+                <input type="checkbox" formControlName="wzw" [checked]="formValues.wzw.value"><span>Tak, jestem nosicielem wirusa WZW B lub WZW C</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div (click)="toggleSection(21)" class="form-frame101">
+          <div class="form-frame130">
+            <img
+              src="/assets/playground_assets/lineduotonemedicinepills33937-trbr.svg"
+              alt="LineDuotoneMedicinePills33937"
+              class="form-line-duotone-medicine-pills3 non-contrast-img"
+            />
+            <img
+              src="/assets/sec7.png"
+              alt="LineDuotoneMedicinePills33937"
+              class="form-line-duotone-medicine-pills3 contrast-img"
+            />
+            <span class="form-text"><span>Przyjmowane leki stałe wraz z dawkowaniem</span></span>
+          </div>
+          <div id="collapse21" class="collapse-section collapsed">
+            <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+            <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+            <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+            <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+          </div>
+        </div> 
+        <form class="form-frame1691 collapsed section-content" id="section21">
+          <div class="form-frame24222">
+            <div class="form-inputform22">
+              <button [class.hidden]="!medsVisibility" class="form-button011">
+                <img
+                  [src]="!medsVisibility ? '/assets/playground_assets/unioni394-vp6j.svg' : 
+                  '/assets/visible-icon.png'"
+                  alt="UnionI394"
+                  class="form-union11 non-contrast-img"
+                />
+                <img
+                [src]="!medsVisibility ? '/assets/hidden-contrast.png' : 
+                '/assets/visible-contrast.png'"
+                alt="UnionI394"
+                class="form-union11 contrast-img"
+                />
+                <input type="checkbox" [(ngModel)]="medsVisibility"
+                name="medsVisibility" id="medsVisibility" [checked]="medsVisibility">
+                <span *ngIf="!medsVisibility" class="form-text056">Ukryte</span>
+                <span *ngIf="medsVisibility" class="form-text056">Widoczne</span>
+              </button>
+              <div class="form-inputsignin22">
+                <input 
+                  type="text" 
+                  class="form-input46" 
+                  [(ngModel)]="medication"
+                  name="medication" id="medication"/>
+              </div>
+              <button [disabled]="!medication" class="remove-item form-button136" (click)="addMedication()">
+                <img
+                  src="/assets/playground_assets/component2i150-bvck.svg"
+                  alt="Component2I150"
+                  class="form-component222"
+                />
+                <button class="form-text565">Dodaj</button>
+              </button>
+            </div>
+            <div class="added-values">
+              <button *ngFor="let med of medsList; let i = index">
+               <div *ngIf="med.length > 0" class="added-value">
+                <span class="form-text567"><span>{{med}}</span></span>
+                <div class="form-frame24020">
+                  <div (click)="removeMed(i)" class="form-frame23751">
+                    <img
+                      src="/assets/playground_assets/buttoni150-ssot.svg"
+                      alt="ButtonI150"
+                      class="form-button138 non-contrast-img"
+                      />
+                      <img
+                        src="/assets/remove-contrast.png"
+                        alt="ButtonI150"
+                        class="form-button138 contrast-img"
+                      />
+                    <span class="form-text571"><span>Usuń</span></span>
+                  </div>
+                </div>
+               </div>
+              </button>
+            </div>
+          </div>
+        </form>              
+      </div>
+
+      <div class="form-section last">
+        <div (click)="toggleSection(22)" class="form-frame101">
+          <div class="form-frame130">
+            <img
+            src="/assets/playground_assets/outlinelistlistheart3955-kdst.svg"
+            alt="OutlineListListHeart3955"
+            class="form-outline-list-list-heart non-contrast-img"
+          />
+          <img
+            src="/assets/sec8.png"
+            alt="OutlineListListHeart3955"
+            class="form-outline-list-list-heart contrast-img"
+          />
+            <span class="form-text"><span>Dodatkowe informacje i instrukcje</span></span>
+          </div>
+          <div id="collapse22" class="collapse-section collapsed">
+            <img src="/assets/collapse-section.png" class="minus non-contrast" alt="Zwiń">
+            <img src="/assets/expand-section.png" class="plus non-contrast" alt="Rozwiń">
+            <img src="/assets/collapse-contrast.png" class="minus contrast" alt="Zwiń">
+            <img src="/assets/expand-contrast.png" class="plus contrast" alt="Rozwiń">
+          </div>
+        </div> 
+        <div class="form-frame1741 collapsed section-content" id="section22">
+          <span class="form-text593">
+            <span>
+              <span>
+                Tutaj wpisz bardzo ważne informacje lub instrukcje przydatne na
+                wypadek potrzeby udzielenia szybkiej pierwszej pomocy, np. “Osoba
+                ma problemy z pamięcią, w razie potrzeby zadzwoń na numer
+                kontaktowy.”
+              </span>
+              <br />
+              <span></span>
+              <br />
+              <span>Pamiętaj, by instrukcje były krótkie i jasne.</span>
+            </span>
+          </span>
+          <div class="form-frame1343">
+            <button [class.hidden]="!formValues.additionalInfoVisibility?.value" class="form-button011 recommended">
+              <img
+                [src]="!formValues.additionalInfoVisibility?.value ? '/assets/hidden-recommend.png' : 
+                '/assets/visible-icon.png'"
+                alt="UnionI394"
+                class="form-union11 non-contrast-img"
+              />
+              <img
+              [src]="!formValues.additionalInfoVisibility?.value  ? '/assets/hidden-contrast-blue.png' : 
+              '/assets/visible-contrast.png'"
+              alt="UnionI394"
+              class="form-union11 contrast-img"
+              />
+              <input type="checkbox" formControlName="additionalInfoVisibility" [checked]="formValues.additionalInfoVisibility?.value">
+              <span *ngIf="!formValues.additionalInfoVisibility?.value" class="form-text056">Ukryte</span>
+              <span *ngIf="formValues.additionalInfoVisibility?.value" class="form-text056">Widoczne</span>
+            </button>
+            <div class="form-input47">
+              <textarea formControlName="additionalInfo" rows="4"></textarea>
+            </div>
+          </div>
+        </div>              
+      </div>
+      <div *ngIf="userData.lastUpdated" class="form-frame227">
+        <span class="form-text603">
+          <span>*Data ostatniej aktualizacji danych: {{userData.lastUpdated | date: 'd.M.yy'}}</span>
+        </span>
+      </div>
+      <div class="bottom-btns d-flex">
+        <button routerLink="/profile" class="form-button148">
+          <span class="form-text620"><span>Uzupełnij później</span></span>
+        </button>
+        <button class="form-button147" (click)="saveForm()">
+          <img
+            src="/assets/playground_assets/component2i683-nz3d.svg"
+            alt="Component2I683"
+            class="form-component223 non-contrast-img"
+          />
+          <img
+            src="/assets/save-contrast.png"
+            alt="Component2I683"
+            class="form-component223 contrast-img"
+          />
+          <span class="form-text618"><span>Zapisz dane</span></span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

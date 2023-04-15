@@ -1,0 +1,102 @@
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="frame277">
+            <div class="frame272">
+                <span class="text-progressbar"><span>Część 2 - Dane dodatkowe</span></span>
+                <span class="text-progressbar"><span>12 / 17</span></span>
+            </div>
+            <div class="progress-line">
+                <div class="progress-line-blue"></div>
+                <div class="progress-line-white"></div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+        <form class="form-formularzdanych">
+            <form class="form-section">
+                <div class="frame294">
+                    <span class="form-category-title"><span>Choroby uszu</span></span>
+                    <div class="frame263">
+                        <span class="form-text-visibility"><span>Czy chcesz, by te dane były widoczne?</span></span>
+                        <button [class.hidden]="!earDiseasesVisibility" class="form-button011 recommended">
+                            <img id="visibility" [src]="!earDiseasesVisibility ? '/assets/visibilityOff.png' :
+                        '/assets/visibilityOn.png'"
+                                 alt="UnionI394"
+                                 class="form-button-visibility" />
+                            <input style="cursor: pointer" type="checkbox" [(ngModel)]="earDiseasesVisibility"
+                                   name="earDiseasesVisibility" id="earDiseasesVisibility" [checked]="earDiseasesVisibility">
+                        </button>
+                    </div>
+                </div>
+                <br />
+                <span class="form-text090">
+                    <span>
+                        <b>Najczęstsze choroby:</b> osłabienie słuchu (w stopniu znacznym), zaburzenia równowagi
+                    </span>
+                </span>
+                <br /><br /><br />
+                <form class="form-section">
+                    <div class="section-content collapsed form-frame79" id="section4">
+                        <div class="form-frame75">
+                            <div class="form-frame242">
+                                <div class="form-inputform">
+                                    <div class="form-inputsignin">
+                                        <input type="text"
+                                               class="form-input24"
+                                               [(ngModel)]="ear"
+                                               name="ear" id="ear" />
+                                    </div>
+                                    <button (click)="addDisease(10)" [disabled]="!ear" class="remove-item form-button021">
+                                        <img src="/assets/playground_assets/component2i150-swjo.svg"
+                                             alt="Component2I150"
+                                             class="form-component2" />
+                                        <span class="form-text096"><span>Dodaj</span></span>
+                                    </button>
+                                </div>
+                                <div class="added-values">
+                                    <button *ngFor="let disease of earList; let i = index">
+                                        <div *ngIf="disease.length > 0" class="added-value">
+                                            <span class="form-text567"><span>{{disease}}</span></span>
+                                            <div class="form-frame24020">
+                                                <div (click)="removeDisease(i, 10)" class="form-frame23751">
+                                                    <img src="/assets/playground_assets/buttoni150-ssot.svg"
+                                                         alt="ButtonI150"
+                                                         class="form-button138 non-contrast-img" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </form>
+                <br /><br />
+                <div class="bottom-btns d-flex">
+                    <button class="button-wstecz" (click)="saveForm('back')">
+                        <img src="/assets/playground_assets/wstecz2.svg"
+                             alt="Wstecz" />
+                    </button>
+                    <button class="button-uzupelnijpozniej" (click)="saveForm('profile')">
+                        <img src="/assets/playground_assets/uzupelnij-pozniej.svg"
+                             alt="Uzupelnijpozniej" />
+                    </button>
+                    <button class="button-dalej" (click)="saveForm('next')">
+                        <img src="/assets/playground_assets/dalej2.svg"
+                             alt="Dalej" />
+                    </button>
+                </div>
+            </form>
+    </div>
+</div>

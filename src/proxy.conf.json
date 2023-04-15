@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://kodyqrnapomocseniorom.herokuapp.com",
+    "secure": false
+  }
+}

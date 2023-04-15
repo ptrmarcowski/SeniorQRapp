@@ -1,0 +1,128 @@
+.form-container {
+    background-color: #FFFFFF;
+}
+
+.form-container {
+    min-height: 100%;
+    padding: 60px 0;
+}
+
+.form-wrapper {
+    max-width: 1080px;
+    margin: 48px auto;
+}
+
+.form-frame99 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-text605 {
+    color: var(--dl-color-gray-black);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 36px;
+}
+
+.form-text607 {
+    color: var(--dl-color-gray-black);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    margin-bottom: 24px;
+}
+
+.frame295 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-content: center;
+    align-self: center;
+    height: 120px;
+    top: 400px;
+    justify-content: center;
+}
+
+.button-przejdz-do {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 480px;
+    height: 48px;
+    background: #0B36DB;
+    border-radius: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-align: center;
+}
+
+.form-text-button-przejdz-do {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.button-uzupelnij-pozniej {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 480px;
+    height: 48px;
+    border: 1px solid #0B36DB;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.form-text-uzupelnij-pozniej {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #0B36DB;
+}
+
+.navbar-logo {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 366px;
+    position: relative;
+    height: 80px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    border-bottom: 0.5px solid #BFBFBF;
+}
+
+.image-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.czesc-podstawowa-image {
+    position: relative;
+    width: 213.42px;
+    height: 120px;
+    margin-top: 38px;
+}

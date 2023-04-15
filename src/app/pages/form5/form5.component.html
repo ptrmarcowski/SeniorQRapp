@@ -1,0 +1,163 @@
+<div class="navbar-logo">
+    <div class="home-frame243">
+        <div class="home-frame2241">
+            <img src="/assets/logo.png" class="non-contrast-img" />
+        </div>
+        <div class="home-frame44">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="frame277">
+            <div class="frame272">
+                <span class="text-progressbar"><span>Część 1 - Dane najważniejsze</span></span>
+                <span class="text-progressbar"><span>4 / 5</span></span>
+            </div>
+            <div class="progress-line">
+                <div class="progress-line-blue"></div>
+                <div class="progress-line-white"></div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+        <form class="form-formularzdanych">
+            <form class="form-section">
+                <div class="frame294">
+                    <span class="form-category-title"><span>Alergie</span></span>
+                    <div class="frame263">
+                        <span class="form-text-visibility"><span>Czy chcesz, by te dane były widoczne?</span></span>
+                        <button [class.hidden]="!drugAllergiesVisibility" class="form-button011 recommended">
+                            <img id="visibility" [src]="!drugAllergiesVisibility ? '/assets/visibilityOff.png' :
+                        '/assets/visibilityOn.png'"
+                                 alt="UnionI394"
+                                 class="form-button-visibility" />
+                            <input style="cursor: pointer" type="checkbox" [(ngModel)]="drugAllergiesVisibility"
+                                   name="drugAllergiesVisibility" id="drugAllergiesVisibility" [checked]="drugAllergiesVisibility">
+                        </button>
+                    </div>
+                </div>
+                <br /><br /><br />
+                <form class="form-section">
+                    <div class="section-content collapsed form-frame79" id="section4">
+                        <div class="form-frame75">
+                            <span class="form-text094"><span>Alergie na leki</span></span>
+                            <div class="form-frame242">
+                                <div class="form-inputform">
+                                    <div class="form-inputsignin">
+                                        <input type="text"
+                                               class="form-input24"
+                                               [(ngModel)]="medsAll"
+                                               name="medsAll" id="medsAll" />
+                                    </div>
+                                    <button (click)="addAllergy(0)" [disabled]="!medsAll" class="remove-item form-button021">
+                                        <img src="/assets/playground_assets/component2i150-swjo.svg"
+                                             alt="Component2I150"
+                                             class="form-component2" />
+                                        <span class="form-text096"><span>Dodaj</span></span>
+                                    </button>
+                                </div>
+                                <div class="added-values">
+                                    <button *ngFor="let allergy of medsAllergiesList; let i = index">
+                                        <div *ngIf="allergy.length > 0" class="added-value">
+                                            <span class="form-text567"><span>{{allergy}}</span></span>
+                                            <div class="form-frame24020">
+                                                <div (click)="removeAllergy(i, 0)" class="form-frame23751">
+                                                    <img src="/assets/playground_assets/buttoni150-ssot.svg"
+                                                         alt="ButtonI150"
+                                                         class="form-button138 non-contrast-img" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-frame761">
+                            <span class="form-text122"><span>Alergie pokarmowe</span></span>
+                            <div class="form-frame24201">
+                                <div class="form-inputform01">
+                                    <div class="form-inputsignin01">
+                                        <input type="text"
+                                               class="form-input25"
+                                               [(ngModel)]="foodAll"
+                                               name="foodAll" id="foodAll" />
+                                    </div>
+                                    <button (click)="addAllergy(1)" [disabled]="!foodAll" class="remove-item form-button021">
+                                        <img src="/assets/playground_assets/component2i150-fxvq.svg"
+                                             alt="Component2I150"
+                                             class="form-component201" />
+                                        <span class="form-text124"><span>Dodaj</span></span>
+                                    </button>
+                                </div>
+                                <div class="added-values">
+                                    <button *ngFor="let allergy of foodAllergiesList; let i = index">
+                                        <div *ngIf="allergy.length > 0" class="added-value">
+                                            <span class="form-text567"><span>{{allergy}}</span></span>
+                                            <div class="form-frame24020">
+                                                <div (click)="removeAllergy(i, 1)" class="form-frame23751">
+                                                    <img src="/assets/playground_assets/buttoni150-ssot.svg"
+                                                         alt="ButtonI150"
+                                                         class="form-button138 non-contrast-img" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-frame151">
+                            <span class="form-text144"><span>Inne alergie</span></span>
+                            <div class="form-frame24202">
+                                <div class="form-inputform02">
+                                    <div class="form-inputsignin02">
+                                        <input type="text"
+                                               class="form-input26"
+                                               [(ngModel)]="otherAll"
+                                               name="otherAll" id="otherAll" />
+                                    </div>
+                                    <button (click)="addAllergy(2)" [disabled]="!otherAll" class="remove-item form-button021">
+                                        <img src="/assets/playground_assets/component2i150-dls.svg"
+                                             alt="Component2I150"
+                                             class="form-component202" />
+                                        <span class="form-text146"><span>Dodaj</span></span>
+                                    </button>
+                                </div>
+                                <div class="added-values">
+                                    <button *ngFor="let allergy of otherAllergiesList; let i = index">
+                                        <div *ngIf="allergy.length > 0" class="added-value">
+                                            <span class="form-text567"><span>{{allergy}}</span></span>
+                                            <div class="form-frame24020">
+                                                <div (click)="removeAllergy(i, 2)" class="form-frame23751">
+                                                    <img src="/assets/playground_assets/buttoni150-ssot.svg"
+                                                         alt="ButtonI150"
+                                                         class="form-button138 non-contrast-img" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </form>
+                <br /><br />
+                <div class="bottom-btns d-flex">
+                    <button class="button-wstecz" (click)="saveForm('back')">
+                        <img src="/assets/playground_assets/wstecz2.svg"
+                             alt="Wstecz" />
+                    </button>
+                    <button class="button-uzupelnijpozniej" (click)="saveForm('profile')">
+                        <img src="/assets/playground_assets/uzupelnij-pozniej.svg"
+                             alt="Uzupelnijpozniej" />
+                    </button>
+                    <button class="button-dalej" (click)="saveForm('next')">
+                        <img src="/assets/playground_assets/dalej2.svg"
+                             alt="Dalej" />
+                    </button>
+                </div>
+            </form>
+    </div>
+</div>
