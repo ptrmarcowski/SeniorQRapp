@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "build-prod": "ng build --prod --verbose=true",
     "build-dev": "ng build --configuration development",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
