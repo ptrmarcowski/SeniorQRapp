@@ -1,4 +1,4 @@
- <div *ngIf="!showPopups" class="login-container">
+ <div class="login-container">
   <app-navbar></app-navbar>
   <div class="login-logowanie">
       <div class="login-column left">
@@ -78,6 +78,3 @@
   </div>
  </div>
 </div>
-<ng-container *ngIf="showPopups">
-  <popup-one [firstTime]="firstTime"></popup-one>
-</ng-container>

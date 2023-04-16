@@ -14,7 +14,6 @@ export class Login implements OnInit{
     fieldTextType: boolean;
     submitted = false;
     invalidData = false;
-    showPopups = false;
     firstTime = false;
 
     constructor(
@@ -46,7 +45,7 @@ export class Login implements OnInit{
             if (r.success) {
                 this.mainService.setCurrentUserId(r.userId);
                 this.firstTime = r.shouldGoToFrom;
-                this.showPopups = true;
+                this.firstTime ? this.router.navigateByUrl("/form") : this.router.navigateByUrl("/profile");
                 
             } else {
               this.invalidData = true;

@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div  *ngIf="!showPopups" class="login-container">
+<div  class="login-container">
   <div class="login-logowanie">
     <div class="login-column left">
       <img src="/assets/registry-image.png" alt="login" class="image-registry">
@@ -76,6 +76,3 @@
   </div>
  </div>
 </div>
-<ng-container *ngIf="showPopups">
-  <popup-one [firstTime]="firstTime"></popup-one>
-</ng-container>
