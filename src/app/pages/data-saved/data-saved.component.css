@@ -260,7 +260,7 @@
 }
 
 .kodqr-text {
-    margin-left: 212px;
+    margin-left: calc(50% - 321px/2 - 347.5px);
     margin-top: 70px;
 }
 

@@ -108,3 +108,115 @@
   margin-bottom: 0;
   text-decoration: none;
 }
+
+.navbar-logo {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 366px;
+    position: relative;
+    height: 80px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    border-bottom: 0.5px solid #BFBFBF;
+}
+
+.delivery-confirmed {
+    position: relative;
+    width: 213.42px;
+    height: 120px;
+    margin-top: 98px;
+}
+
+.image-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame-text-confirmed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+    height: 90px;
+    justify-content: center;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.frame-text-confirmed-title {
+    width: 1016px;
+    height: 44px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+}
+
+.frame-text-confirmed-text {
+    width: 1016px;
+    height: 22px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.data-saved-button {
+    width: 480px;
+    height: 48px;
+    display: flex;
+    padding: 0 16px;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    justify-content: center;
+    background-color: var(--dl-color-qr-blue03);
+}
+
+.data-saved-text06 {
+    color: var(--dl-color-gray-white);
+    height: auto;
+    flex-grow: 1;
+    font-size: 1rem;
+    align-self: auto;
+    font-style: SemiBold;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 600;
+    line-height: 1.375rem;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.buttons-box {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    background-color: var(--dl-color-gray-white);
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 240px;
+}
