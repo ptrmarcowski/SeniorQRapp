@@ -76,8 +76,9 @@ input[type=number] {
 }
 
 .button-check.blood input:checked + span {
-    border-color: var(--dl-color-qr-green02);
-    background: var(--dl-color-qr-green02);
+    border-radius: 8px;
+    border: none;
+    background: #C5DBFF;
 }
 
 .remove-item:disabled {

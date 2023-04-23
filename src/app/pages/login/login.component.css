@@ -22,6 +22,11 @@
     display: flex;
     flex-direction: row;
 }
+
+::ng-deep body[contrast="enabled"] .login-logowanie {
+    background: black !important;
+}
+
 .login-column {
   max-width: 550px;
 }
@@ -45,6 +50,9 @@
     border-radius: 300px 8px 8px 300px;
 }
 
+::ng-deep body[contrast="enabled"] .login-column.left {
+    background: black !important;
+}
 
 .login-form {
   max-width: 496px;

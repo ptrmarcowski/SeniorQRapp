@@ -193,6 +193,7 @@ const routes = [
         loadChildren: () =>
             import('./pages/profile/profile.module').then((m) => m.ProfileModule),
     },
+    /* DEPRACATED
     {
         path: 'profile-doc',
         canLoad: [OnlyLoggedInUsersGuard],
@@ -200,7 +201,7 @@ const routes = [
             import('./pages/profile-doc/profile-doc.module').then(
                 (m) => m.ProfileDocModule
             ),
-    },
+    },*/
     {
         path: 'form-saved',
         canLoad: [OnlyLoggedInUsersGuard],

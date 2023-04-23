@@ -1181,13 +1181,17 @@
     left: 0px;
     background: #C5DBFF;
     border-radius: 0px 30px 30px 0px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-align: right;
     flex-direction: row-reverse;
     padding-left: 8%;
     /*width: calc(8% + 282px);*/
-    width: calc(8% + 348px);
+    margin-bottom: 24px;
+}
+
+::ng-deep body[contrast="enabled"] .bar1 {
+    background: #ffff53;
 }
 
 .bar1-text {
@@ -1200,6 +1204,10 @@
     padding-right: 20px;
 }
 
+::ng-deep body[contrast="enabled"] .bar1-text {
+    color: black !important;
+}
+
 .bar2 {
     height: 60px;
     background: #C5DBFF;
@@ -1209,13 +1217,13 @@
     left: 0px;
     background: #C5DBFF;
     border-radius: 0px 30px 30px 0px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-align: right;
     flex-direction: row-reverse;
     padding-left: 8%;
     /*width: calc(8% + 282px);*/
-    width: calc(8% + 556px);
+    margin-bottom: 24px;
 }
 
 .bar2-text {
@@ -1231,13 +1239,24 @@
 .bar2-undertext {
     position: relative;
     width: 1016px;
-
     margin-left: 8%;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
+
+::ng-deep body[contrast="enabled"] .bar2 {
+    background: #ffff53;
+}
+
+::ng-deep body[contrast="enabled"] .bar2-text {
+    color: black !important;
+}
+
+::ng-deep body[contrast="enabled"] .bar2-undertext {
+    color: #ffff53 !important;
 }
 
 .bar3 {
@@ -1249,13 +1268,17 @@
     left: 0px;
     background: #C5DBFF;
     border-radius: 0px 30px 30px 0px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-align: right;
     flex-direction: row-reverse;
     padding-left: 8%;
     /*width: calc(8% + 282px);*/
-    width: calc(8% + 565px);
+    margin-bottom: 24px;
+}
+
+::ng-deep body[contrast="enabled"] .bar3 {
+    background: #ffff53;
 }
 
 .bar4 {
@@ -1267,13 +1290,17 @@
     left: 0px;
     background: #C5DBFF;
     border-radius: 0px 30px 30px 0px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-align: right;
     flex-direction: row-reverse;
     padding-left: 8%;
+    margin-bottom: 24px;
     /*width: calc(8% + 282px);*/
-    width: calc(8% + 259px);
+}
+
+::ng-deep body[contrast="enabled"] .bar4 {
+    background: #ffff53;
 }
 
 .bar5 {
@@ -1285,13 +1312,17 @@
     left: 0px;
     background: #C5DBFF;
     border-radius: 0px 30px 30px 0px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-align: right;
     flex-direction: row-reverse;
     padding-left: 8%;
     /*width: calc(8% + 282px);*/
-    width: calc(8% + 506.03px);
+    margin-bottom: 24px;
+}
+
+::ng-deep body[contrast="enabled"] .bar5 {
+    background: #ffff53;
 }
 
 .metki-registry {
@@ -1334,7 +1365,7 @@
     font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 22px;
     text-align: center;
     color: #5B5B5B;
@@ -1395,6 +1426,10 @@
     margin: -4px 0px;
 }
 
+::ng-deep body[contrast="enabled"] .text1-punkt {
+    color: #ffff53 !important;
+}
+
 .text1-info {
     display: flex;
     flex-direction: column;
@@ -1409,12 +1444,11 @@
 
 .text1-title {
     width: 353px;
-    height: 24px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     letter-spacing: 0.02em;
     color: #000000;
     flex: none;
@@ -1429,8 +1463,8 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 0.875rem;
+    line-height: 1.063rem;
     color: #000000;
     flex: none;
     order: 1;
@@ -1489,4 +1523,8 @@
     height: 75.58px;
     padding-left: 62px;
     top: 1575px;
+}
+
+::ng-deep body[contrast="enabled"] .footer {
+    background: #494949 !important;
 }

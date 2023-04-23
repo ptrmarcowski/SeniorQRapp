@@ -1028,19 +1028,44 @@
   height: 100%;
  }
 
+.bar-vertical {
+    width: 100%;
+    flex-direction: row;
+    display:flex;
+}
+
+.left-bar {
+    position: relative;
+    height: 48px;
+    background: #C5DBFF;
+    display: flex;
+    width: 8%;
+}
+
+::ng-deep body[contrast="enabled"] .left-bar {
+    background: #ffff53;
+}
+
 .bar {
     position: relative;
     height: 48px;
     left: 0px;
     background: #C5DBFF;
     border-radius: 0px 30px 30px 0px;
-    display: flex;
     align-items: center;
-    text-align: right;
-    flex-direction: row-reverse;
-    padding-left: 8%;
     /*width: calc(8% + 29px);*/
-    width: calc(8% + 193px);
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    padding-right: 20px;
+    display: inline-flex;
+}
+
+::ng-deep body[contrast="enabled"] .bar {
+    background: #ffff53;
 }
 
 .text-jaktodziala {
@@ -1051,19 +1076,22 @@
     line-height: 29px;
     letter-spacing: 0.02em;
     padding-right: 20px;
-    
 }
 
-.kroki-text {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 100px;
-    position: relative;
-    width: 100%;
-    justify-content: center;
+::ng-deep body[contrast="enabled"] .text-jaktodziala {
+    color: black!important;
 }
+
+    .kroki-text {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 100px;
+        position: relative;
+        width: 100%;
+        justify-content: center;
+    }
 
 .kroki-text-under {
     width: 206px;
@@ -1075,7 +1103,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 15px;
     letter-spacing: 0.02em;
 }
@@ -1086,7 +1114,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 24px;
     letter-spacing: 0.02em;
     order: 1;
@@ -1113,22 +1141,29 @@
 .under-footer {
     position: relative;
     width: 100%;
-    height: 202px;
     background: #C5DBFF;
+    padding-bottom: 40px;
+}
+
+::ng-deep body[contrast="enabled"] .under-footer {
+    background: black !important;
 }
 
 .under-footer-text {
     position: relative;
     width: 571px;
-    height: 48px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     letter-spacing: 0.02em;
     padding-top: 40px;
     margin-left: 8%;
+}
+
+::ng-deep body[contrast="enabled"] .under-footer-text {
+    color: #ffff53;
 }
 
 .metki-button {
@@ -1150,7 +1185,6 @@
 
 .metki-text {
     width: 231px;
-    height: 22px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -1167,7 +1201,11 @@
 .metki-image {
     position: relative;
     height: 226px;
-    top: -90px;
+    top: -45px;
     float: right;
     margin-right: 20%;
+}
+
+::ng-deep body[contrast="enabled"] .footer {
+    background: #494949 !important;
 }

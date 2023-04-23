@@ -371,7 +371,7 @@
           </span>
         </div>
         <div class="profile-qr">
-          <button routerLink="/form" class="profile-button">
+          <button routerLink="/form" (click)="checkAndChangeContrast()" class="profile-button">
             <div class="profile-component2">
               <img
                 src="/assets/playground_assets/component2i683-2oqi.svg"
@@ -392,7 +392,7 @@
           <button (click)="htmltoPDF()" class="profile-button1">
             <span class="profile-text079"><span>Pobierz kod QR w PDF</span></span>
           </button>
-          <button routerLink="/delivery-form" class="profile-button2">
+          <button routerLink="/delivery-form" (click)="checkAndChangeContrast()" class="profile-button2">
             <span class="profile-text081"><span>Zamów metki ponownie</span></span>
           </button>
           <button (click)="logout()" class="profile-button2">

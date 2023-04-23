@@ -119,4 +119,11 @@ export class Profile implements OnInit {
             pdf.save('kodQR.pdf');
         });
     }
+
+    checkAndChangeContrast() {
+        if (document.querySelector('body').hasAttribute('contrast')) {
+            document.querySelector('body').removeAttribute('contrast');
+            localStorage.removeItem('contrast');
+        }
+    }
 }

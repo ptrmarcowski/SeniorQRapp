@@ -1320,7 +1320,7 @@
   align-items: center;
   flex-shrink: 0;
   border-color: transparent;
-  border-radius: 8px;
+  border-radius: 30px;
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 8px;
@@ -1385,7 +1385,6 @@
 
 .code-qr-scan-container {
   width: 100%;
-  background-color: var(--dl-color-qr-gray01);
   min-height: 100%;
 }
 
